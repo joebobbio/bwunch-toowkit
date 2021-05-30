@@ -1215,7 +1215,7 @@ fi
     }
 
     getdestination(){
-        select INSTALLTYPE in "Singleboot only Chrome OS" "Dualboot with another OS" Quit; do
+        select INSTALLTYPE in "Singweboot onwy Chwome OS" "Duawboot with anyothew OS" Quit; do
         if [ -z "$INSTALLTYPE" ] ; then
             echo "[EWWOW] Invawid option"
         elif [[ $INSTALLTYPE =~ .*"OS".* ]] ; then
