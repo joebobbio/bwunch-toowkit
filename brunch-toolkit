@@ -45,8 +45,8 @@ cat << "EOF"
 |    |___/_|  \_,_|_||_\__|_||_|   |_|\___/\___/_|_\_\_|\__|    |
 |                                                               |
 +---------------------------------------------------------------+
-|    Need help? Found a bug?                                    |
-|    Find me in the Brunch Discord!                --Wisteria   |
+|    Nyeed hewp? Found a bug?                                   |
+|    Find me in the Bwunch Discowd (・`ω´・)                    |
 +---------------------------------------------------------------+
 EOF
 printf "              \e]8;;$DISCORD\e\\ >> $DISCORD << \e]8;;\e\\"
@@ -71,9 +71,9 @@ echo "Version: $TOOLVER"
         VARS=true
         webtest
         if [ "$DEBUGCHECK" == "true" ] ; then
-            echo "[!] DEBUG Mode enabled!"
-            echo "File operations will still happen,"
-            echo "but installs and updates are blocked."
+            echo "[!] DEBUG Mode enyabwed ^w^"
+            echo "Fiwe opewations wiww stiww happen,"
+            echo "but instawws and updates awe bwocked."
         fi
     # Get the brunch version in two formats for readability
         CURRENT=$(awk '{print $4}' 2> /dev/null < /etc/brunch_version)
@@ -113,16 +113,16 @@ echo "Version: $TOOLVER"
         if [ "$LINUX" == true ] ; then
             getextras
         fi
-        echo "All necessary components loaded"
+        echo "Aww nyecessawy componyents woaded"
         fi
     }
 
     getextras(){
     #EXTRAS=$(dpkg-query -l cgpt pv tar unzip curl | grep 'no packages found matching')
     #    if [ ! -z "$EXTRAS" ] ; then
-        echo "[!] This toolkit and the Brunch script require the following dependencies:"
-        echo "pv, cgpt, unzip, curl and tar"
-        echo "Installing unmet dependencies, please wait..."
+        echo "[ ^w^ ] This toowkit and the Bwunch scwipt wequiwe the fowwowing dependencies:"
+        echo "pv, cgpt, unzip, cuww and taw"
+        echo "Instawwing unmet dependencies, pwease wait..."
         sudo apt-get update >> $DOWNLOADS/toolkit-log.txt
         sudo apt-get -y install pv cgpt unzip tar curl >> $DOWNLOADS/toolkit-log.txt
     #    fi
@@ -138,27 +138,27 @@ echo "Version: $TOOLVER"
             # skip all extras, PWA functions define their own vars
             debug
         elif [ $uid -eq 0 ] ; then
-            echo "$0 must NOT be run as root."
+            echo "$0 must NyOT be wun as woot."
             cleanexit
         fi
-            echo "Getting toolkit ready, please wait..."
+            echo "Getting toowkit weady, pwease wait..."
             vanity
             RELEASE=$(cat /etc/brunch_version 2>/dev/null)
         if [ -z "$RELEASE" ] && [[ $(grep icrosoft /proc/version 2> /dev/null) ]] ; then
-            echo "[!] Launching in Windows WSL Mode"
-            echo "WSL support is limited! This script will use your current directory."
-            echo "Please be sure to cd into the directory where this script is located or some functions may fail."
+            echo "[ UwU ] Waunching in Windows WSW Mode"
+            echo "WSW suppowt is wimited (・ω・)  This scwipt wiww use youw cuwwent diwectowy."
+            echo "Pwease be suwe to cd into the diwectowy whewe this scwipt is wocated ow some functions may faiw."
             LINUX=true
             WSL=true
             debug
             cleanexit
         elif [ -z "$RELEASE" ] && [[ -z $(grep icrosoft /proc/version 2> /dev/null) ]] ; then
-            echo "[!] Launching in Linux Mode"
+            echo "[ ;;w;; ] Waunching in Winyux Mode"
             LINUX=true
             debug
             cleanexit
         else
-            echo "[!] Launching in Brunch Mode"
+            echo "[ owo ] Waunching in Bwunch Mode"
             LINUX=false
             debug
             cleanexit
@@ -168,7 +168,7 @@ echo "Version: $TOOLVER"
 # Please route all paths out of the script though this call
 # Returns all variables to their default to prevent bad interactions with other scripts
     cleanexit() {
-        echo "[!] Exiting..."
+        echo "[ UwU ] Exiting..."
         CURRENT=
         PS3=
         BRUNCH=
@@ -231,36 +231,36 @@ echo "Version: $TOOLVER"
         #echo "Not all functions are ready yet!"
         echo ""
         echo "+---------------------------------------------------------------+"
-        echo "|                           Main Menu                           |"
+        echo "|                           Main Menyu                          |"
         echo "+---------------------------------------------------------------+"
         echo ""
         if [ "$LINUX" == "true" ] ; then
         linuxfunction
         else
-        select FUNCTION in "Update Brunch" "Update Chrome OS & Brunch" "Install Brunch" "Compatibility Check" "Change Boot Animation" "Install/Update Toolkit" "Shell Options" "Framework Options" "Changelog" "Version" "About" Quit; do
+        select FUNCTION in "Update Bwunch" "Update Chwome OS & Bwunch" "Instaww Bwunch" "Compatibiwity Check" "Change Boot Anyimation" "Instaww/Update Toowkit" "Sheww Options" "Framework Options" "Changewog" "Vewsion" "About" Quit; do
         if [[ -z "$FUNCTION" ]] ; then
-           echo "[ERROR] Invalid option"
-        elif [[ $FUNCTION == "Update Brunch" ]] ; then
+           echo "[EWWOW] Invawid option"
+        elif [[ $FUNCTION == "Update Bwunch" ]] ; then
             mfbrunch
-        elif [[ $FUNCTION == "Update Chrome OS & Brunch" ]] ; then
+        elif [[ $FUNCTION == "Update Chwome OS & Bwunch" ]] ; then
             mfchrome
-        elif [[ $FUNCTION == "Install Brunch" ]] ; then
+        elif [[ $FUNCTION == "Instaww Bwunch" ]] ; then
             mfinstall
-        elif [[ $FUNCTION == "Compatibility Check" ]] ; then
+        elif [[ $FUNCTION == "Compatibiwity Check" ]] ; then
             compatibilitycheck
-        elif [[ $FUNCTION == "Changelog" ]] ; then
+        elif [[ $FUNCTION == "Changewog" ]] ; then
             changelog
         elif [[ $FUNCTION == "Version" ]] ; then
             version
         elif [[ $FUNCTION == "About" ]] ; then
             help
-        elif [[ $FUNCTION == "Change Boot Animation" ]] ; then
+        elif [[ $FUNCTION == "Change Boot Anyimation" ]] ; then
             mfbootanim
-        elif [[ $FUNCTION == "Install/Update Toolkit" ]] ; then
+        elif [[ $FUNCTION == "Instaww/Update Toowkit" ]] ; then
             mftoolkit
-        elif [[ $FUNCTION == "Shell Options" ]] ; then
+        elif [[ $FUNCTION == "Sheww Options" ]] ; then
             brunchshellsetup
-        elif [[ $FUNCTION == "Framework Options" ]] ; then
+        elif [[ $FUNCTION == "Fwamewowk Options" ]] ; then
             editgrubconfig
         elif [[ $FUNCTION == "Quit" ]] ; then
             cleanexit
@@ -273,16 +273,16 @@ echo "Version: $TOOLVER"
 
 
     linuxfunction() {
-    select FUNCTION in "Install Brunch" "Compatibility Check" "Changelog" "Version" "About" Quit; do
+    select FUNCTION in "Instaww Bwunch" "Compatibiwity Check" "Changewog" "Vewsion" "About" Quit; do
         if [[ -z "$FUNCTION" ]] ; then
-           echo "[ERROR] Invalid option"
-        elif [[ $FUNCTION == "Install Brunch" ]] ; then
+           echo "[EWWOW] Invawid option"
+        elif [[ $FUNCTION == "Instaww Bwunch" ]] ; then
             mfinstall
-        elif [[ $FUNCTION == "Compatibility Check" ]] ; then
+        elif [[ $FUNCTION == "Compatibiwity Check" ]] ; then
             compatibilitycheck
-        elif [[ $FUNCTION == "Changelog" ]] ; then
+        elif [[ $FUNCTION == "Changewog" ]] ; then
             changelog
-        elif [[ $FUNCTION == "Version" ]] ; then
+        elif [[ $FUNCTION == "Vewsion" ]] ; then
             version
         elif [[ $FUNCTION == "About" ]] ; then
             help
@@ -304,51 +304,51 @@ echo "Version: $TOOLVER"
         vanity
         RELEASE=$(cat /etc/brunch_version 2>/dev/null)
             if [ -z "$RELEASE" ] ; then
-            echo "[ERROR] Quick Update only works on Brunch systems!"
+            echo "[EWWOW] Quick Update onwy wowks on Bwunch systems UwU"
             cleanexit
             fi
         setvars
-        echo "Quick update in progress, please wait..."
+        echo "Quick update in pwogwess, pwease wait..."
         if [[ $LATESTBRUNCH =~ .*"$CURRENT".* ]] && [ "$IGNORECHECK" == false ] ; then
-            echo "[!] You already have the latest version of Brunch. ($RELEASE)"
+            echo "[ owo ] You awweady have the watest vewsion of Bwunch. ($RELEASE)"
             cleanexit
         fi
 # If no brunch files, download latest
         if [ -z  "$FILES" ] && [ "$OFFLINE" == "false" ] ; then
-            echo "[ERROR] No Brunch files found!"
-            echo "Now downloading latest release $LATESTBRUNCH, please wait..."
+            echo "[EWWOW] Nyo Bwunch fiwes found UwU"
+            echo "Nyow downwoading watest wewease $LATESTBRUNCH, pwease wait..."
             curl -L -O --progress-bar "$(curl -s https://api.github.com/repos/sebanc/brunch/releases/latest | grep 'browser_' | cut -d\" -f4)"
-            echo "Brunch update downloaded! Updating, please wait..."
+            echo "Bwunch update downwoaded ^w^  Updating, pwease wait..."
             echo ""
             FILES="$(find *runch*tar.gz 2> /dev/null | sort -r | head -1 )"
             BRUNCH=$FILES
             update
 # If no internet, warn
         elif [ -z  "$FILES" ] && [ "$OFFLINE" == "true" ] ; then
-        echo "[ERROR] No Brunch file found, Downloading one..."
-        echo "[ERROR] Unable to automatically download update, please download it manually."
+        echo "[EWWOW] Nyo Bwunch fiwe found, Downwoading onye..."
+        echo "[EWWOW] Unyabwe to automaticawwy downwoad update, pwease downwoad it manyuawwy."
         echo "You can find the latest release here:"
             echo ""
             printf '    \e]8;;https://github.com/sebanc/brunch/releases\e\\ >> https://github.com/sebanc/brunch/releases << \e]8;;\e\\\n'
             echo ""
-            echo "Please run this script again after your download finishes."
+            echo "Pwease wun this scwipt again aftew youw downwoad finyishes."
         cleanexit
 # Get list of brunch files, proceed only if there's just one target and it matches the github release
         elif [ "$FILECOUNT" == "1" ] && [[ $FILES =~ .*"$LATESTBRUNCH".* ]] ; then
             BRUNCH=$FILES
             update
         elif [ "$FILECOUNT" == "1" ] && [[ ! $FILES =~ .*"$LATESTBRUNCH".* ]] ; then
-            echo "[!] Brunch file may not be recent or has an unexpected filename!"
-            echo "Now downloading latest release $LATESTBRUNCH, please wait..."
+            echo "[ owo ] Bwunch fiwe may nyot be wecent ow has an unyexpected fiwenyame owo"
+            echo "Nyow downwoading watest wewease $LATESTBRUNCH, pwease wait..."
             curl -L -O --progress-bar "$(curl -s https://api.github.com/repos/sebanc/brunch/releases/latest | grep 'browser_' | cut -d\" -f4)"
-            echo "Brunch update downloaded! Updating, please wait..."
+            echo "Bwunch update downwoaded ^w^  Updating, pwease wait..."
             echo ""
             BRUNCH=$LATESTBRUNCH
             update
 # Warn if there is more than one brunch file present
         else
-            echo "[!] There are too many Brunch files present to use Quick mode."
-            echo "Relaunching in standard update mode, please wait..."
+            echo "[ >w< ] Thewe awe too many Bwunch fiwes pwesent to use Quick mode."
+            echo "Wewaunching in standawd update mode, pwease wait..."
             echo ""
             main
         fi
@@ -394,26 +394,26 @@ echo "Version: $TOOLVER"
     checktoolkitver(){
         if [ "$TOOLVER" == "$TKLA" ] ; then
             echo ""
-            echo "You're already using the latest version of the Brunch Toolkit"
+            echo "You'we awweady using the watest vewsion of the Bwunch Toowkit"
         fi
         if [ "$OFFLINE" == "true" ] ; then
             tkoffline
             cleanexit
         fi
         echo ""
-        echo "Current toolkit version:   $TOOLVER"
-        echo "Latest toolkit version:    $TKLA"
+        echo "Cuwwent toowkit vewsion:   $TOOLVER"
+        echo "Watest toowkit vewsion:    $TKLA"
         echo ""
-        echo "What would you like to do?"
+        echo "What wouwd you wike to do?"
         echo ""
-        select TOOLKITOPTS in "Install Brunch Toolkit $TOOLVER" "Update to Brunch Toolkit $TKLA" "Update & Install $TKLA" Quit; do
+        select TOOLKITOPTS in "Instaww Bwunch Toowkit $TOOLVER" "Update to Bwunch Toowkit $TKLA" "Update & Instaww $TKLA" Quit; do
         if [[ -z "$TOOLKITOPTS" ]] ; then
-           echo "[ERROR] Invalid option"
-        elif [[ $TOOLKITOPTS == "Install Brunch Toolkit $TOOLVER" ]] ; then
+           echo "[EWWOW] Invawid option"
+        elif [[ $TOOLKITOPTS == "Instaww Bwunch Toowkit $TOOLVER" ]] ; then
             tbinstall
-        elif [[ $TOOLKITOPTS == "Update to Brunch Toolkit $TKLA" ]] ; then
+        elif [[ $TOOLKITOPTS == "Update to Bwunch Toowkit $TKLA" ]] ; then
             tbupdate
-        elif [[ $TOOLKITOPTS == "Update & Install $TKLA" ]] ; then
+        elif [[ $TOOLKITOPTS == "Update & Instaww $TKLA" ]] ; then
             tbupandin
         elif [[ $TOOLKITOPTS == "Quit" ]] ; then
             cleanexit
@@ -426,14 +426,14 @@ echo "Version: $TOOLVER"
 
     tkoffline(){
         echo ""
-        echo "Current toolkit version:   $TOOLVER"
+        echo "Cuwwent toowkit vewsion:   $TOOLVER"
         echo ""
-        echo "What would you like to do?"
+        echo "What wouwd you wike to do?"
         echo ""
-        select TOOLKITOPTS in "Install Brunch Toolkit $TOOLVER" Quit; do
+        select TOOLKITOPTS in "Instaww Bwunch Toowkit $TOOLVER" Quit; do
         if [[ -z "$TOOLKITOPTS" ]] ; then
-           echo "[ERROR] Invalid option"
-        elif [[ $TOOLKITOPTS == "Install Brunch Toolkit $TOOLVER" ]] ; then
+           echo "[EWWOW] Invawid option"
+        elif [[ $TOOLKITOPTS == "Instaww Bwunch Toowkit $TOOLVER" ]] ; then
             tbinstall
         elif [[ $TOOLKITOPTS == "Quit" ]] ; then
             cleanexit
@@ -448,22 +448,22 @@ echo "Version: $TOOLVER"
         mv -f $DOWNLOADS/brunch-toolkit-$TOOLVER.sh /usr/local/bin/brunch-toolkit
         chmod +x /usr/local/bin/brunch-toolkit
         mkdir /usr/local/bin/brunch-toolkit-assets
-        echo "Brunch Toolkit has been installed!"
-        echo "To use the installed version, just type 'brunch-toolkit' without quotes"
-        echo "It should look something like this:"
+        echo "Bwunch Toowkit has been instawwed owo "
+        echo "To use the instawwed vewsion, just type 'bwunch-toowkit' without quotes"
+        echo "It shouwd wook something wike this:"
         echo ""
         echo ""
-        echo -e "\e[01;32mchronos@localhost \e[01;34m/ $ \e[0mbrunch-toolkit"
+        echo -e "\e[01;32mchwonyos@wocawhost \e[01;34m/ $ \e[0mbwunch-toowkit"
         echo ""
         echo ""
-        echo "Note that the installed version does not require '.sh' at the end"
+        echo "Nyote that the instawwed vewsion does nyot wequiwe '.sh' at the end"
         cleanexit
     }
 
     tbupdate(){
-        echo "Downloading latest Brunch Toolkit, please wait..."
+        echo "Downwoading watest Bwunch Toowkit, pwease wait..."
         curl -L -O --progress-bar  "$TKLAURL"
-        echo "Downloaded successfully!"
+        echo "Downwoaded successfuwwy owo"
     }
 
     tbupandin(){
@@ -484,62 +484,62 @@ echo "Version: $TOOLVER"
     PREVIOUSSET=$(cd /usr/local/bin/brunch-toolkit-assets/ && ls *.btbs 2> /dev/null | sed -e s/.btbs//)
     if [ -n "$PREVIOUSSET" ] && [ -z "$CURRENTLYSET" ] ; then
     echo ""
-    echo "The boot animation was reset to the default, this is typical after an update."
-    echo "You can reset it to your last animation with the options here,"
-    echo "or reset it quickly by running the script again with -qb"
+    echo "The boot anyimation was weset to the defauwt, this is typicaw aftew an update."
+    echo "You can weset it to youw wast anyimation with the options hewe,"
+    echo "ow weset it quickwy by wunnying the scwipt again with -qb"
     RESETPOSSIBLE=true
     fi
     echo ""
-    echo "Getting boot animation files, please wait..."
+    echo "Getting boot anyimation fiwes, pwease wait..."
     echo ""
     if [ -z  "$ANIMS" ] && [ "$OFFLINE" == "false" ] ; then
             webanimcheck
         elif [ -z  "$ANIMS" ] && [ "$OFFLINE" == "true" ] ; then
-            echo "[ERROR] No boot animation files found!"
+            echo "[EWWOW] Nyo boot anyimation fiwes found ^w^"
             cleanexit
         elif [ "$OFFLINE" == "true" ] ; then
-            echo "Boot animation files found!"
+            echo "Boot anyimation fiwes found >w< "
             selectanimoffline
         else [ "$OFFLINE" == "false" ]
-            echo "Boot animation files found!"
+            echo "Boot anyimation fiwes found ;;w;;"
             selectanim
         fi
     }
 
     selectanim() {
         echo ""
-        echo "Enter the number of the animation you want to use."
+        echo "Entew the nyumbew of the anyimation you want to use."
         if [ "$RESETPOSSIBLE" == "true" ] ; then
-        echo "Your previously set animation was $PREVIOUSSET"
+        echo "Youw pweviouswy set anyimation was $PREVIOUSSET"
         echo ""
-        select BOOTSPLASH in "Use previous animation" "Download others from github" ${ANIMS} Quit; do
+        select BOOTSPLASH in "Use pwevious anyimation" "Downwoad othews fwom github" ${ANIMS} Quit; do
         if [ -z "$BOOTSPLASH" ] ; then
-           echo "[ERROR] Invalid option"
-        elif [[ $BOOTSPLASH =~ .*"previous".* ]] ; then
+           echo "[EWWOW] Invawid option"
+        elif [[ $BOOTSPLASH =~ .*"pwevious".* ]] ; then
             resetanim
-        elif [[ $BOOTSPLASH =~ .*"Download".* ]] ; then
+        elif [[ $BOOTSPLASH =~ .*"Downwoad".* ]] ; then
             webanimcheck
         elif [ "$BOOTSPLASH" == "Quit" ] ; then
             cleanexit
         else
-            echo "Boot animation file selected."
+            echo "Boot anyimation fiwe sewected."
             changebootsplash
         fi
         done
         else
         if [ -n "$CURRENTLYSET" ] ; then
-        echo "Your currently set animation is $CURRENTLYSET"
+        echo "Youw cuwwentwy set anyimation is $CURRENTLYSET"
         fi
         echo ""
-        select BOOTSPLASH in "Download others from github" ${ANIMS} Quit; do
+        select BOOTSPLASH in "Downwoad othews fwom github" ${ANIMS} Quit; do
         if [ -z "$BOOTSPLASH" ] ; then
-           echo "[ERROR] Invalid option"
-        elif [[ $BOOTSPLASH =~ .*"Download".* ]] ; then
+           echo "[EWWOW] Invawid option"
+        elif [[ $BOOTSPLASH =~ .*"Downwoad".* ]] ; then
             webanimcheck
         elif [ "$BOOTSPLASH" == "Quit" ] ; then
             cleanexit
         else
-            echo "Boot animation file selected."
+            echo "Boot anyimation fiwe sewected."
             changebootsplash
         fi
         done
@@ -548,34 +548,34 @@ echo "Version: $TOOLVER"
 
     selectanimoffline() {
         echo ""
-        echo "Enter the number of the animation you want to use."
+        echo "Entew the nyumbew of the anyimation you want to use."
         if [ "$RESETPOSSIBLE" == "true" ] ; then
-        echo "Your previously set animation was $PREVIOUSSET"
+        echo "Youw pweviouswy set anyimation was $PREVIOUSSET"
         echo ""
-        select BOOTSPLASH in "Use previous animation" ${ANIMS} Quit ; do
+        select BOOTSPLASH in "Use pwevious anyimation" ${ANIMS} Quit ; do
         if [ -z "$BOOTSPLASH" ] ; then
-           echo "[ERROR] Invalid option"
-        elif [[ $BOOTSPLASH =~ .*"previous".* ]] ; then
+           echo "[EWWOW] Invawid option"
+        elif [[ $BOOTSPLASH =~ .*"pwevious".* ]] ; then
             resetanim
         elif [ "$BOOTSPLASH" == "Quit" ] ; then
             cleanexit
         else
-            echo "Boot animation file selected."
+            echo "Boot anyimation fiwe sewected."
             changebootsplash
         fi
         done
         else
         if [ -n "$CURRENTLYSET" ] ; then
-        echo "Your currently set animation is $CURRENTLYSET"
+        echo "Youw cuwwentwy set anyimation is $CURRENTLYSET"
         fi
         echo ""
         select BOOTSPLASH in ${ANIMS} Quit ; do
         if [ -z "$BOOTSPLASH" ] ; then
-           echo "[ERROR] Invalid option"
+           echo "[EWWOW] Invawid option"
         elif [ "$BOOTSPLASH" == "Quit" ] ; then
             cleanexit
         else
-            echo "Boot animation file selected."
+            echo "Boot anyimation fiwe sewected."
             changebootsplash
         fi
         done
@@ -584,24 +584,24 @@ echo "Version: $TOOLVER"
 
     webanimcheck(){
         echo ""
-        echo "These are the avaliable animations from the brunch-bootsplash github."
+        echo "These awe the avawiabwe anyimations fwom the bwunch-bootspwash github."
         echo ""
         select WEBSPLASH in ${WEBANIMS} Quit ; do
         if [ -z "$WEBSPLASH" ] ; then
-           echo "[ERROR] Invalid option"
+           echo "[EWWOW] Invawid option"
         elif [ "$WEBSPLASH" == "Quit" ] ; then
             cleanexit
         else
-            echo "Boot animation file selected."
+            echo "Boot anyimation fiwe sewected."
             getnewanim
         fi
         done
     }
 
     getnewanim() {
-        echo "Now downloading animation from github, please wait..."
+        echo "Nyow downwoading anyimation fwom github, pwease wait..."
         curl -L -O --progress-bar $WEBANIMSPREFIX$WEBSPLASH/$WEBSPLASH.zip
-        echo "Boot animation downloaded! Refreshing, please wait..."
+        echo "Boot anyimation downwoaded ^w^  Wefweshing, pwease wait..."
         echo ""
         ANIMS="$(find boot_splash*.zip 2> /dev/null)"
         echo "[DEBUG] $ANIMS"
@@ -610,11 +610,11 @@ echo "Version: $TOOLVER"
 
     changebootsplash(){
     # Unzip selection
-        echo "Unzipping archive, please wait..."
+        echo "Unzipping awchive, pwease wait..."
         BSDIR=$(echo "$BOOTSPLASH" | sed -e s/.zip//)
         mkdir $DOWNLOADS/$BSDIR
-        bsdtar -xf "$BOOTSPLASH" -C $DOWNLOADS/"$BSDIR" || { echo "[ERROR] Unable to unzip animation archive" ; cleanexit ; }
-        sudo cp $DOWNLOADS/$BSDIR/boot_splash_frame*.png /usr/share/chromeos-assets/images_100_percent || { echo "[ERROR] Unable to apply boot animation" ; cleanexit ; }
+        bsdtar -xf "$BOOTSPLASH" -C $DOWNLOADS/"$BSDIR" || { echo "[EWWOW] Unyabwe to unzip anyimation awchive" ; cleanexit ; }
+        sudo cp $DOWNLOADS/$BSDIR/boot_splash_frame*.png /usr/share/chromeos-assets/images_100_percent || { echo "[EWWOW] Unyabwe to appwy boot anyimation" ; cleanexit ; }
         sudo cp $DOWNLOADS/$BSDIR/boot_splash_frame*.png /usr/share/chromeos-assets/images_200_percent 2> /dev/null
         sudo cp $DOWNLOADS/$BSDIR/boot_splash_frame*.png /usr/local/bin/brunch-toolkit-assets 2> /dev/null
         sudo rm /usr/share/chromeos-assets/images_100_percent/*.btbs 2> /dev/null
@@ -624,9 +624,9 @@ echo "Version: $TOOLVER"
         rm -rf $DOWNLOADS/$BSDIR
     # Cleanup
     # Prompt to reboot
-        echo "New boot animation applied, please reboot to see results."
-        echo "Custom boot animations will only last until a framework or system update."
-        echo "Updating Brunch, ChromeOS or your framework options may remove the animation."
+        echo "Nyew boot anyimation appwied, pwease weboot to see wesuwts."
+        echo "Custom boot anyimations wiww onwy wast untiw a fwamewowk ow system update."
+        echo "Updating Bwunch, ChwomeOS ow youw fwamewowk options may wemuv the anyimation."
         echo ""
         cleanexit
     }
@@ -634,20 +634,20 @@ echo "Version: $TOOLVER"
     resetanim(){
     echo ""
         if [ -z "$PREVIOUSSET" ] ; then
-    echo "[ERROR] Your previous boot animation could not be detected!"
-    echo "If you've just updated the toolkit or haven't installed a boot animation yet"
-    echo "please use the toolkit's menu to set an animation manually first."
+    echo "[EWWOW] Youw pwevious boot anyimation couwd nyot be detected ;;w;; "
+    echo "If you've just updated the toowkit ow haven't instawwed a boot anyimation yet"
+    echo "pwease use the toowkit's menyu to set an anyimation manyuawwy fiwst."
     echo ""
     cleanexit
     fi
-    echo "Quickly resetting your custom boot animation, please wait..."
+    echo "Quickwy wesetting youw custom boot anyimation, pwease wait..."
         sudo cp /usr/local/bin/brunch-toolkit-assets/boot_splash_frame*.png /usr/share/chromeos-assets/images_100_percent || { echo "[ERROR] Unable to apply boot animation" ; cleanexit ; } 2> /dev/null
         sudo cp /usr/local/bin/brunch-toolkit-assets/boot_splash_frame*.png /usr/share/chromeos-assets/images_200_percent
         sudo rm /usr/share/chromeos-assets/images_100_percent/*.btbs 2> /dev/null
         sudo touch /usr/share/chromeos-assets/images_100_percent/$PREVIOUSSET.btbs 2> /dev/null
-        echo "New boot animation applied, please reboot to see results."
-        echo "Custom boot animations will only last until a framework or system update."
-        echo "Updating Brunch, ChromeOS or your framework options may remove the animation."
+        echo "Nyew boot anyimation appwied, pwease weboot to see wesuwts."
+        echo "Custom boot anyimations wiww onwy wast untiw a fwamewowk ow system update."
+        echo "Updating Bwunch, ChwomeOS ow youw fwamewowk options may wemuv the anyimation."
         echo ""
         cleanexit
     }
@@ -659,19 +659,19 @@ echo "Version: $TOOLVER"
 # Determine if Brunch files are present and if user is offline
     getfiles() {
         echo ""
-        echo "Getting Brunch release files, please wait..."
+        echo "Getting Bwunch wewease fiwes, pwease wait..."
         echo ""
         if [ -z  "$FILES" ] && [ "$OFFLINE" == "false" ] ; then
             getupdate
         elif [ -z  "$FILES" ] && [ "$OFFLINE" == "true" ] ; then
-            echo "[ERROR] No Brunch files found!"
-            echo "Looking for any .tar.gz in $DOWNLOADS..."
+            echo "[EWWOW] Nyo Bwunch fiwes found owo "
+            echo "Wooking fow any .taw.gz in $DOWNLOADS..."
             wrongfile
         elif [ "$OFFLINE" == "true" ] ; then
-            echo "Brunch files found!"
+            echo "Bwunch fiwes found UwU"
             selectbrunchoffline
         else [ "$OFFLINE" == "false" ]
-            echo "Brunch files found!"
+            echo "Bwunch fiwes found! nya~"
             selectbrunch
         fi
     }
@@ -679,18 +679,18 @@ echo "Version: $TOOLVER"
 # Prompts the user to select which update they want to apply from the list stored in var $FILES
     selectbrunch() {
         echo ""
-        echo "Enter the number of the release you want to use."
-        echo "The options at the top should be the most recent."
+        echo "Entew the nyumbew of the wewease you want to use."
+        echo "The options at the top shouwd be the most wecent."
         echo ""
-        select BRUNCH in "Download the latest release: $LATESTBRUNCH" ${FILES} Quit; do
+        select BRUNCH in "Downwoad the watest wewease: $LATESTBRUNCH" ${FILES} Quit; do
         if [ -z "$BRUNCH" ] ; then
-           echo "[ERROR] Invalid option"
-        elif [[ $BRUNCH =~ .*"Download".* ]] ; then
+           echo "[EWWOW] Invawid option"
+        elif [[ $BRUNCH =~ .*"Downwoad".* ]] ; then
             webverscheck
         elif [ "$BRUNCH" == "Quit" ] ; then
             cleanexit
         else
-            echo "Brunch release file selected."
+            echo "Bwunch wewease fiwe sewected."
             sanitycheck
         fi
         done
@@ -699,16 +699,16 @@ echo "Version: $TOOLVER"
 # Prompts the user to select which update they want to apply from the list stored in var $FILES
     selectbrunchoffline() {
         echo ""
-        echo "Enter the number of the release you want to use."
-        echo "The options at the top should be the most recent."
+        echo "Entew the nyumbew of the wewease you want to use."
+        echo "The options at the top shouwd be the most wecent."
         echo ""
         select BRUNCH in ${FILES} Quit; do
         if [ -z "$BRUNCH" ] ; then
-           echo "[ERROR] Invalid option"
+           echo "[EWWOW] Invawid option"
         elif [[ $BRUNCH == "Quit" ]] ; then
             cleanexit
         else
-            echo "Brunch release file selected."
+            echo "Bwunch wewease fiwe sewected."
             sanitycheck
         fi
         done
@@ -718,35 +718,35 @@ echo "Version: $TOOLVER"
 # This function is only called if a brunch .tar.gz file is not present AND the user is offline
     wrongfile() {
         if [ -z "$OTHERTARGZ" ] ; then
-            echo "No possible tar.gz files found."
-            echo "You can find the latest release here:"
+            echo "Nyo possibwe taw.gz fiwes found."
+            echo "You can find the watest wewease hewe:"
             echo ""
-            printf '    \e]8;;https://github.com/sebanc/brunch/releases/latest\e\\ >> https://github.com/sebanc/brunch/releases/latest << \e]8;;\e\\\n'
+            printf '    \e]8;;https://github.com/sebanc/bwunch/weweases/watest\e\\ >> https://github.com/sebanc/bwunch/weweases/watest << \e]8;;\e\\\n'
             echo ""
-            echo "Please run this script again after your download finishes."
+            echo "Pwease wun this scwipt again aftew youw downwoad finyishes."
             cleanexit
         fi
         echo ""
-        echo "Possible update files found!"
-        echo "Your Brunch files may have an unexpected filename."
-        echo "This can happen if you renamed them or downloaded from another source."
-        echo "If any of these are your Brunch release file, you can select it"
+        echo "Possibwe update fiwes found owo"
+        echo "Youw Bwunch fiwes may have an unyexpected fiwenyame."
+        echo "This can happen if you wenyamed them ow downwoaded fwom anyothew souwce."
+        echo "If any of these awe youw Bwunch wewease fiwe, you can sewect it"
         echo ""
-        select BRUNCH in ${OTHERTARGZ} "None of these" Quit; do
+        select BRUNCH in ${OTHERTARGZ} "Nyonye of these" Quit; do
         if [ -z "$BRUNCH" ] ; then
-           echo "[ERROR] Invalid option"
-        elif [[ $BRUNCH =~ .*"None".* ]] ; then
-        echo "If none of these files are Brunch releases, you can find the latest release here:"
+           echo "[EWWOW] Invawid option"
+        elif [[ $BRUNCH =~ .*"Nyonye".* ]] ; then
+        echo "If nyonye of these fiwes awe Bwunch weweases, you can find the watest wewease hewe:"
         echo ""
-            printf '    \e]8;;https://github.com/sebanc/brunch/releases/latest\e\\ >> https://github.com/sebanc/brunch/releases/latest << \e]8;;\e\\\n'
+            printf '    \e]8;;https://github.com/sebanc/bwunch/weweases/watest\e\\ >> https://github.com/sebanc/bwunch/weweases/watest << \e]8;;\e\\\n'
             echo ""
-            echo "Please run this script again after your download finishes."
+            echo "Pwease wun this scwipt again aftew youw downwoad finyishes."
             cleanexit
 
         elif [ "$BRUNCH" == "Quit" ] ; then
             cleanexit
         else
-            echo "Brunch release file selected."
+            echo "Bwunch wewease fiwe sewected."
             sanitycheck
         fi
         done
@@ -762,23 +762,23 @@ echo "Version: $TOOLVER"
             fi
             getbrunchshortname
             echo ""
-            echo "Target version:  ${BRUNCHSN1^} $BRUNCHSN2 $BRUNCHSN3.$BRUNCHSN4 $BRUNCHSN5"
-            echo "Current version: $RELEASE"
+            echo "Tawget vewsion:  ${BRUNCHSN1^} $BRUNCHSN2 $BRUNCHSN3.$BRUNCHSN4 $BRUNCHSN5"
+            echo "Cuwwent vewsion: $RELEASE"
             echo ""
             if [[ $BRUNCH =~ .*"$CURRENT".* ]] ; then
-                echo "[!] You are already using the selected version."
+                echo "[ UwU ] You awe awweady using the sewected vewsion."
                     read -rp "Do you want to update anyway? (y/n): " yn
                     case $yn in
                         [Yy]* ) update; break;;
-                        [Nn]* ) echo "Update cancelled!"; cleanexit;;
-                        * ) echo "[ERROR] Invalid option, Please type yes or no.";;
+                        [Nn]* ) echo "Update cancewwed (・\`ω´・)"; cleanexit;;
+                        * ) echo "[EWWOW] Invawid option, Pwease type yes ow nyo.";;
                     esac
             else
-            read -rp "Update with this release? (y/n): " yn
+            read -rp "Update with this wewease? (y/n): " yn
             case $yn in
                 [Yy]* ) update; break;;
-                [Nn]* ) echo "Update cancelled!"; cleanexit;;
-                * ) echo "[ERROR] Invalid option, Please type yes or no.";;
+                [Nn]* ) echo "Update cancewwed UwU"; cleanexit;;
+                * ) echo "[EWWOW] Invawid option, Pwease type yes ow nyo.";;
             esac
             fi
         done
@@ -801,20 +801,20 @@ echo "Version: $TOOLVER"
 # Determine if Chrome recovery files are present and if user is offline
     getcros() {
         echo ""
-        echo "Getting Chrome OS recovery files, please wait..."
+        echo "Getting Chwome OS wecuvwy fiwes, pwease wait..."
         echo ""
         if [ -z  "$CROS" ] && [ "$OFFLINE" == "false" ] ; then
             getcrosupdate
         elif [ -z  "$CROS" ] && [ "$OFFLINE" == "true" ] ; then
-            echo "[ERROR] No Chrome OS files found!"
-            echo "Updating Brunch only..."
+            echo "[EWWOW] Nyo Chwome OS fiwes found (・\`ω´・)"
+            echo "Updating Bwunch onwy..."
             INCLUDECHROME=false
                 sanitycheck
         elif [ "$OFFLINE" == "true" ] ; then
-            echo "Chrome OS Recovery files found!"
+            echo "Chwome OS Wecuvwy fiwes found ^w^"
             selectcrosoffline
         else [ "$OFFLINE" == "false" ]
-            echo "Chrome OS Recovery files found!"
+            echo "Chwome OS Wecuvwy fiwes found ^w^"
             selectcros
         fi
     }
@@ -822,13 +822,13 @@ echo "Version: $TOOLVER"
 # Prompts the user to select which recovery they want to apply from the list stored in var $FILES
     selectcros() {
         echo ""
-        echo "Enter the number of the Recovery you want to use."
-        echo "The options at the top should be the most recent."
+        echo "Entew the nyumbew of the Wecuvwy you want to use."
+        echo "The options at the top shouwd be the most wecent."
         echo ""
-        select CHROME in "Download the latest recovery from list" ${CROS} Quit; do
+        select CHROME in "Downwoad the watest wecuvwy fwom wist" ${CROS} Quit; do
         if [ -z "$CHROME" ] ; then
-           echo "[ERROR] Invalid option"
-        elif [[ $CHROME =~ .*"Download".* ]] ; then
+           echo "[EWWOW] Invawid option"
+        elif [[ $CHROME =~ .*"Downwoad".* ]] ; then
             crosverscheck
         elif [ "$CHROME" == "Quit" ] ; then
             cleanexit
@@ -841,19 +841,19 @@ echo "Version: $TOOLVER"
 # Prompts the user to select which update they want to apply from the list stored in var $FILES
     selectcrosoffline() {
         if [ -z $CROS ] ; then
-            echo "[ERROR] Chrome OS recoveries could not be identified!"
-            echo "Make sure the recovery bin or bin.zip is in $DOWNLOADS and the filename contains 'chromeos'"
-            echo "Updating Brunch only..."
+            echo "[EWWOW] Chwome OS wecuvwies couwd nyot be identified owo "
+            echo "Make suwe the wecuvwy bin ow bin.zip is in $DOWNLOADS and the fiwenyame contains 'chwomeos'"
+            echo "Updating Bwunch onwy..."
             INCLUDECHROME=false
             sanitycheck
         fi
         echo ""
-        echo "Enter the number of the Recovery you want to use."
-        echo "The options at the top should be the most recent."
+        echo "Entew the nyumbew of the Wecuvwy you want to use."
+        echo "The options at the top shouwd be the most wecent."
         echo ""
         select CHROME in ${CROS} Quit; do
         if [ -z "$CHROME" ] ; then
-           echo "[ERROR] Invalid option"
+           echo "[EWWOW] Invawid option"
         elif [[ $CHROME == "Quit" ]] ; then
             cleanexit
         else
@@ -867,40 +867,40 @@ echo "Version: $TOOLVER"
         while true; do
             checkunzip
             if [ -z "$CHROME" ] && [ "$INSTALLING" == "true" ] ; then
-                echo "[ERROR] Chrome OS recovery could not be identified!"
-                echo "Make sure the recovery bin or bin.zip is in $DOWNLOADS and the filename contains 'chromeos'"
-                echo "Unable to install, please verify your files and install manually..."
+                echo "[EWWOW] Chwome OS wecuvwy couwd nyot be identified (・\`ω´・)"
+                echo "Make suwe the wecuvwy bin ow bin.zip is in $DOWNLOADS and the fiwenyame contains 'chwomeos'"
+                echo "Unyabwe to instaww, pwease vewify youw fiwes and instaww manyuawwy..."
                 cleanexit
             elif [ -n "$CHROME" ] && [ "$INSTALLING" == "true" ]; then
                 installos
             elif [ -z "$CHROME" ] ; then
-                echo "[ERROR] Chrome OS Recovery could not be identified!"
-                echo "Updating Brunch only..."
+                echo "[EWWOW] Chwome OS Wecuvwy couwd nyot be identified ^w^ "
+                echo "Updating Bwunch onwy..."
                 INCLUDECHROME=false
                 sanitycheck
             fi
-            echo "Chrome OS recovery file selected."
+            echo "Chwome OS wecuvwy fiwe sewected."
             echo ""
             getcrosver
-            echo "Current Brunch version: $RELEASE"
+            echo "Cuwwent Bwunch vewsion: $RELEASE"
             getbrunchshortname
-            echo "Current Chrome OS version: $CROSVER"
+            echo "Cuwwent Chwome OS vewsion: $CROSVER"
             getcrosshortname
             echo ""
             if [[ $BRUNCH =~ .*"$CURRENT".* ]] ; then
-                echo "[!] You are already using the selected Brunch version."
+                echo "[ owo ] You awe awweady using the sewected Bwunch vewsion."
                     read -rp "Do you want to update anyway? (y/n): " yn
                     case $yn in
                         [Yy]* ) update; break;;
-                        [Nn]* ) echo "Update cancelled!"; cleanexit;;
-                        * ) echo "[ERROR] Invalid option, Please type yes or no.";;
+                        [Nn]* ) echo "Update cancewwed (・\`ω´・)"; cleanexit;;
+                        * ) echo "[EWWOW] Invawid option, Pwease type yes ow nyo.";;
                     esac
             else
-            read -rp "Update with these files? (y/n): " yn
+            read -rp "Update with these fiwes? (y/n): " yn
             case $yn in
                 [Yy]* ) update; break;;
-                [Nn]* ) echo "Update cancelled!"; cleanexit;;
-                * ) echo "[ERROR] Invalid option, Please type yes or no.";;
+                [Nn]* ) echo "Update cancewwed owo"; cleanexit;;
+                * ) echo "[EWWOW] Invawid option, Pwease type yes ow nyo.";;
             esac
             fi
         done
@@ -908,16 +908,16 @@ echo "Version: $TOOLVER"
 
     checkunzip(){
     if [[ "$CHROME" =~ .*"zip".* ]] ; then
-    echo "Unzipping selected file, please wait..."
+    echo "Unzipping sewected fiwe, pwease wait..."
         if [ "$LINUX" == "true" ] ; then
-            unzip "$CHROME" || { echo "[ERROR] Unzip failed!" ; echo "Try another file." ; echo "If this keeps happening, please try to unzip the file manually." ; getcros ; }
+            unzip "$CHROME" || { echo "[EWWOW] Unzip faiwed ;;w;; " ; echo "Twy anyothew fiwe." ; echo "If this keeps happenying, pwease twy to unzip the fiwe manyuawwy." ; getcros ; }
         else
-            bsdtar -xf "$CHROME" || { echo "[ERROR] Unzip failed!" ; echo "Try another file." ; echo "If this keeps happening, please try to unzip the file manually." ; getcros ; }
+            bsdtar -xf "$CHROME" || { echo "[EWWOW] Unzip faiwed ;;w;; " ; echo "Twy anyothew fiwe." ; echo "If this keeps happenying, pwease twy to unzip the fiwe manyuawwy." ; getcros ; }
         fi
             TMPNZIP=$CHROME
             rm "$CHROME"
             CHROME=${TMPNZIP%.zip}
-            echo "$CHROME unzipped, proceeding..."
+            echo "$CHROME unzipped, pwoceeding..."
     fi
     }
 
@@ -936,25 +936,25 @@ echo "Version: $TOOLVER"
 # If no brunch update is present, prompt user to download most recent to link to github releases
 # getbrunch can probably be combined with this to reduce user input
     getupdate() {
-        echo "[ERROR] A Brunch release file was not found in $DOWNLOADS"
+        echo "[EWWOW] A Bwunch wewease fiwe was nyot found in $DOWNLOADS"
         echo ""
-        echo "What would you like to do?"
-        echo "Select one of the following options."
+        echo "What wouwd you wike to do?"
+        echo "Sewect onye of the fowwowing options."
         echo ""
-        select METHOD in "Download the newest release: $LATESTBRUNCH" "Visit the releases page" Quit; do
-        if [[ $METHOD =~ .*"Download".* ]]; then
+        select METHOD in "Downwoad the nyewest wewease: $LATESTBRUNCH" "Visit the weweases page" Quit; do
+        if [[ $METHOD =~ .*"Downwoad".* ]]; then
             webverscheck
         elif [[ $METHOD =~ .*"Visit".* ]]; then
-            echo "You can find the latest release here:"
+            echo "You can find the watest wewease hewe:"
             echo ""
-            printf '    \e]8;;https://github.com/sebanc/brunch/releases\e\\ >>https://github.com/sebanc/brunch/releases<< \e]8;;\e\\\n'
+            printf '    \e]8;;https://github.com/sebanc/bwunch/weweases\e\\ >>https://github.com/sebanc/bwunch/weweases<< \e]8;;\e\\\n'
             echo ""
-            echo "Please run this script again after your download finishes."
+            echo "Pwease wun this scwipt again aftew youw downwoad finyishes."
             cleanexit
         elif [ "$METHOD" == "Quit" ] ; then
             cleanexit
         else
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         fi
         done
     }
@@ -962,9 +962,9 @@ echo "Version: $TOOLVER"
 # Immediately download the latest brunch release, quiet but shows progress bar
 # Returns the user to the beginning of the brunch updater to use the downloaded file immediately
     getbrunch() {
-        echo "Now downloading latest release $LATESTBRUNCH, please wait..."
+        echo "Nyow downwoading watest wewease $LATESTBRUNCH, pwease wait..."
         curl -L -O --progress-bar "$(curl -s https://api.github.com/repos/sebanc/brunch/releases/latest | grep 'browser_' | cut -d\" -f4)"
-        echo "Brunch release downloaded! Refreshing, please wait..."
+        echo "Bwunch wewease downwoaded UwU  Wefweshing, pwease wait..."
         echo ""
         FILES="$(ls -ArR *runch*tar.gz 2> /dev/null)"
         selectbrunchoffline
@@ -975,20 +975,20 @@ echo "Version: $TOOLVER"
     webverscheck() {
         if [[ $FILES =~ .*"$LATESTBRUNCH".* ]] ; then
         echo "$FILES"
-            echo "[!] You already have this file!"
-            read -rp "Do you want to delete the older file and download it again? (y/n): " yn
+            echo "[ ^w^ ] You awweady have this fiwe ^w^ "
+            read -rp "Do you want to dewete the owdew fiwe and downwoad it again? (y/n): " yn
             case $yn in
                 [Yy]* ) delbrunch; return;;
-                [Nn]* ) echo "Download cancelled!"; cleanexit;;
-                    * ) echo "[ERROR] Invalid option, Please type yes or no.";;
+                [Nn]* ) echo "Downwoad cancewwed owo"; cleanexit;;
+                    * ) echo "[EWWOW] Invawid option, Pwease type yes ow nyo.";;
             esac
         elif [[ $LATESTBRUNCH =~ .*"$CURRENT".* ]] ; then
-            echo "[!] You are are already using the selected version."
-            read -rp "Do you want to download it anyway? (y/n): " yn
+            echo "[ ^w^ ] You awe awe awweady using the sewected vewsion."
+            read -rp "Do you want to downwoad it anyway? (y/n): " yn
             case $yn in
                 [Yy]* ) getbrunch; return;;
-                [Nn]* ) echo "Download cancelled!"; cleanexit;;
-                    * ) echo "[ERROR] Invalid option, Please type yes or no.";;
+                [Nn]* ) echo "Downwoad cancewwed UwU"; cleanexit;;
+                    * ) echo "[EWWOW] Invawid option, Pwease type yes ow nyo.";;
             esac
         else
            getbrunch
@@ -1008,25 +1008,25 @@ echo "Version: $TOOLVER"
 
 # If no brunch update is present, prompt user to download most recent to link to github releases
     getcrosupdate() {
-        echo "[ERROR] A Chrome OS recovery file was not found in $DOWNLOADS"
+        echo "[EWWOW] A Chwome OS wecuvwy fiwe was nyot found in $DOWNLOADS"
         echo ""
-        echo "What would you like to do?"
-        echo "Select one of the following options."
+        echo "What wouwd you wike to do?"
+        echo "Sewect onye of the fowwowing options."
         echo ""
-        select METHOD in "Download the newest recovery" "Visit the releases page" Quit; do
-        if [[ $METHOD =~ .*"Download".* ]]; then
+        select METHOD in "Downwoad the nyewest wecuvwy" "Visit the weweases page" Quit; do
+        if [[ $METHOD =~ .*"Downwoad".* ]]; then
             crosverscheck
         elif [[ $METHOD =~ .*"Visit".* ]]; then
-            echo "You can find the latest release here:"
+            echo "You can find the watest wewease hewe:"
             echo ""
-            printf '    \e]8;;https://cros.tech\e\\ >>https://cros.tech<< \e]8;;\e\\\n'
+            printf '    \e]8;;https://cwos.tech\e\\ >>https://cwos.tech<< \e]8;;\e\\\n'
             echo ""
-            echo "Please run this script again after your download finishes."
+            echo "Pwease wun this scwipt again aftew youw downwoad finyishes."
             cleanexit
         elif [ "$METHOD" == "Quit" ] ; then
             cleanexit
         else
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         fi
         done
     }
@@ -1035,7 +1035,7 @@ echo "Version: $TOOLVER"
 # Returns the user to the beginning of the chromeos updater to use the downloaded file immediately
     getchrome() {
         getchromeurl
-        echo "Chrome OS recovery downloaded! Unzipping, please wait..."
+        echo "Chwome OS wecuvwy downwoaded >w<  Unzipping, pwease wait..."
         echo ""
         CHROME="$(find *$RECOVERYTODOWNLOAD*.bin.zip 2> /dev/null | sort -r | head -1)"
         if [ "$LINUX" == "true" ] ; then
@@ -1052,11 +1052,11 @@ echo "Version: $TOOLVER"
         CHROMEURL=$(curl https://cros.tech/device/$RECOVERYTODOWNLOAD | tr ' ' '\n' | tr '>' '\n' | grep href= | sed 's/"//g' | sed 's/href=//g' | tail -1)
         CHROMEURLVERS=$(curl https://cros.tech/device/$RECOVERYTODOWNLOAD | tr ' ' '\n' | tr '>' '\n' | sed 's/"//g' | sed 's/href=//g' | grep '</span' | sed 's/<\/span//g' | tail -1)
 if (echo "$CHROMEURL" | grep -Eq '^href=https://(.*\.zip)'); then
-        echo "[ERROR] Unable to download recovery, please get one manually from cros.tech"
+        echo "[EWWOW] Unyabwe to downwoad wecuvwy, pwease get onye manyuawwy fwom cwos.tech"
         cleanexit
 fi
 # Possible to create case where user can select version, but I'm not going to rn
-        echo "Downloading $RECOVERYTODOWNLOAD r$CHROMEURLVERS, please wait..."
+        echo "Downwoading $RECOVERYTODOWNLOAD r$CHROMEURLVERS, pwease wait..."
         curl -L -O --progress-bar $CHROMEURL
         }
 
@@ -1067,40 +1067,40 @@ fi
         echo ""
         echo "CPU:$CPUTYPE"
         if [ "$SUGGESTED" == "grunt" ] && [ "$STONEYRIDGE" == "true" ; then
-        echo "Your CPU is only compatible with Grunt."
-        echo "You may select others if you want, but they may not work."
+        echo "Youw CPU is onwy compatibwe with Gwunt."
+        echo "You may sewect othews if you want, but they may nyot wowk."
         elif [ "$SUGGESTED" == "zork" ] && [ "$STONEYRIDGE" == "true" ; then
-        echo "Your CPU is only compatible with Zork."
-        echo "You may select others if you want, but they may not work."
+        echo "Youw CPU is onwy compatibwe with Zowk."
+        echo "You may sewect othews if you want, but they may nyot wowk."
         elif [ "$SUGGESTED" == "grunt" ] && [ "$STONEYRIDGE" == "false" ; then
-        echo "Your CPU may be compatible with Grunt or Zork, but isn't a known CPU."
-        echo "Only AMD's Stoney Ridge CPUs are compatible with Grunt."
-        echo "Only AMD's Ryzen CPUs are compatible with Zork."
-        echo "You may select others if you want, but they may not work."
+        echo "Youw CPU may be compatibwe with Gwunt ow Zowk, but isn't a knyown CPU."
+        echo "Onwy AMD's Stonyey Widge CPUs awe compatibwe with Gwunt."
+        echo "Onwy AMD's Wyzen CPUs awe compatibwe with Zowk."
+        echo "You may sewect othews if you want, but they may nyot wowk."
         elif [ "$SUGGESTED" != "grunt" ] ; then
-        echo "The suggested recovery for your CPU is $SUGGESTED"
+        echo "The suggested wecuvwy fow youw CPU is $SUGGESTED"
         fi
         if [ "$SECONDCHOICE" == true ] && [ "$SUGGESTED" != "grunt" ] ; then
-        echo "Your CPU is also compatible with Eve, Nami and Hatch."
+        echo "Youw CPU is awso compatibwe with Eve, Nyami and Hatch."
         fi
         if [ "$SPECIALBUILD" == true ] && [ "$SUGGESTED" != "grunt" ] ; then
-        echo "Your CPU may require a special build to boot!"
-        echo "If you run into problems, check out our discord for assistance."
+        echo "Youw CPU may wequiwe a speciaw buiwd to boot ;;w;;"
+        echo "If you wun into pwobwems, check out ouw discowd fow assistance."
         fi
         if [ "$SUGGESTED" == "unknown" ] ; then
-        echo "Your CPU could not be determined or may not be compatible with Brunch."
-        echo "You can continue, but be aware that it may not work!"
-        echo "Which recovery would you like to download?"
+        echo "Youw CPU couwd nyot be detewminyed ow may nyot be compatibwe with Bwunch."
+        echo "You can continyue, but be awawe that it may nyot wowk >w< "
+        echo "Which wecuvwy wouwd you wike to downwoad?"
         echo ""
-        echo "Grunt only works on AMD Stoney Ridge CPUs."
-        echo "Zork only works on AMD Ryzen CPUs."
-        echo "Samus is suggested for Intel Core ix 3rd gen and older CPUs."
-        echo "Rammus is suggested for Intel Core ix 4th gen and newer CPUS."
-        echo "All other CPUs are currently unsupported."
+        echo "Gwunt onwy wowks on AMD Stonyey Widge CPUs."
+        echo "Zowk onwy wowks on AMD Wyzen CPUs."
+        echo "Samus is suggested fow Intew Cowe ix 3wd gen and owdew CPUs."
+        echo "Wammus is suggested fow Intew Cowe ix 4th gen and nyewew CPUS."
+        echo "Aww othew CPUs awe cuwwentwy unsuppowted."
         echo ""
         select RECOVERYTODOWNLOAD in rammus samus grunt zork "Choose another" Quit; do
         if [[ -z "$RECOVERYTODOWNLOAD" ]] ; then
-           echo "[ERROR] Invalid option"
+           echo "[EWWOW] Invawid option"
         elif [[ $RECOVERYTODOWNLOAD == "Quit" ]] ; then
             cleanexit
         else
@@ -1109,13 +1109,13 @@ fi
         done
         fi
         echo ""
-        echo "Which recovery would you like to download?"
-        echo "If you aren't sure what to use, go with the suggestion"
+        echo "Which wecuvwy wouwd you wike to downwoad?"
+        echo "If you awen't suwe what to use, go with the suggestion"
         if [ "$LINUX" == "false" ] ; then
-            echo "You are currently using $CRB"
+            echo "You awe cuwwentwy using $CRB"
         fi
         echo ""
-        select RECOVERYTODOWNLOAD in "Use suggested ($SUGGESTED)" ${RECOVERYOPTIONS} "Select another" Quit; do
+        select RECOVERYTODOWNLOAD in "Use suggested ($SUGGESTED)" ${RECOVERYOPTIONS} "Sewect anyothew" Quit; do
         if [[ -z "$RECOVERYTODOWNLOAD" ]] ; then
            echo "[ERROR] Invalid option"
         elif [[ $RECOVERYTODOWNLOAD == "Quit" ]] ; then
@@ -1123,9 +1123,9 @@ fi
         elif [[ $RECOVERYTODOWNLOAD == "Use suggested ($SUGGESTED)" ]] ; then
             RECOVERYTODOWNLOAD=$SUGGESTED
             getchrome
-        elif [[ $RECOVERYTODOWNLOAD == "Select another" ]] ; then
-            echo "Please enter the board name of the recovery you'd like to use"
-            echo "Enter 'back' if you'd like to go back."
+        elif [[ $RECOVERYTODOWNLOAD == "Sewect anyothew" ]] ; then
+            echo "Pwease entew the boawd nyame of the wecuvwy you'd wike to use"
+            echo "Entew 'back' if you'd wike to go back."
             bringyourownrecovery
         else
             getchrome
@@ -1142,14 +1142,14 @@ fi
 
         checkvalidrecovery(){
             if [[ -z "$RECOVERYTODOWNLOAD" ]] ; then
-                echo "[ERROR] Invalid option, Please type a valid board name or type back to return to the list."
+                echo "[EWWOW] Invawid option, Pwease type a vawid boawd nyame ow type back to wetuwn to the wist."
                 bringyourownrecovery
             elif [[ "$VALIDRECOVERIES" =~ .*"$RECOVERYTODOWNLOAD".* ]] ; then
                 getchrome
             elif [[ "$RECOVERYTODOWNLOAD" =~ .*"ack".* ]] ; then
                 crosverscheck
             else
-                echo "[ERROR] Invalid option, Please type a valid board name or type back to return to the list."
+                echo "[EWWOW] Invawid option, Pwease type a vawid boawd nyame ow type back to wetuwn to the wist."
                 bringyourownrecovery
             fi
         }
@@ -1170,11 +1170,11 @@ fi
 # Checks to see if $CHROME was set to include a ChromeOS recovery in the update
     trueupdate() {
         if [ -z "$CHROME" ] ; then
-            echo "Launching Brunch update script, please wait..."
+            echo "Waunching Bwunch update scwipt, pwease wait..."
             sudo chromeos-update -f $DOWNLOADS/"$BRUNCH"
             cleanexit
         else
-            echo "Launching Brunch & Chrome OS update script, please wait..."
+            echo "Waunching Bwunch & Chwome OS update scwipt, pwease wait..."
             sudo chromeos-update -r $DOWNLOADS/"$CHROME" -f $DOWNLOADS/"$BRUNCH"
             cleanexit
         fi
@@ -1183,33 +1183,33 @@ fi
 # Debug ending script. prevents accidental installs or updates while testing.
     debugupdate() {
         if [ -z "$CHROME" ] ; then
-            echo "Launching Brunch update script, please wait..."
-            echo "sudo chromeos-update -f $DOWNLOADS/$BRUNCH"
-            echo "No update has happened. Exiting debug mode..."
+            echo "Waunching Bwunch update scwipt, pwease wait..."
+            echo "sudo chwomeos-update -f $DOWNLOADS/$BRUNCH"
+            echo "Nyo update has happenyed. Exiting debug mode..."
             cleanexit
         else
-            echo "Launching Brunch & Chrome OS update script, please wait..."
-            echo "sudo chromeos-update -r $DOWNLOADS/$CHROME -f $DOWNLOADS/$BRUNCH"
-            echo "No update has happened. Exiting debug mode..."
+            echo "Waunching Bwunch & Chwome OS update scwipt, pwease wait..."
+            echo "sudo chwomeos-update -w $DOWNLOADS/$CHROME -f $DOWNLOADS/$BRUNCH"
+            echo "Nyo update has happenyed. Exiting debug mode..."
             cleanexit
         fi
     }
 
     installos(){
         if [ "$LINUX" == "true" ] && [ "$WSL" == "false" ] ; then
-            { find $DOWNLOADS/brunch-toolkit-workspace 2> /dev/null ; rm -rf $DOWNLOADS/brunch-toolkit-workspace/ 2> /dev/null ; mkdir $DOWNLOADS/brunch-toolkit-workspace ; echo "Brunch Toolkit workspace has been cleaned." ; } || { mkdir $DOWNLOADS/brunch-toolkit-workspace ; echo "Brunch Toolkit workspace has been created." ; }
-            echo "Preparing to extract selected Brunch files, please wait..."
+            { find $DOWNLOADS/brunch-toolkit-workspace 2> /dev/null ; rm -rf $DOWNLOADS/brunch-toolkit-workspace/ 2> /dev/null ; mkdir $DOWNLOADS/brunch-toolkit-workspace ; echo "Bwunch Toowkit wowkspace has been cweanyed." ; } || { mkdir $DOWNLOADS/brunch-toolkit-workspace ; echo "Bwunch Toowkit wowkspace has been cweated." ; }
+            echo "Pwepawing to extwact sewected Bwunch fiwes, pwease wait..."
             sudo tar zxvf $DOWNLOADS/$BRUNCH -C $DOWNLOADS/brunch-toolkit-workspace
         elif [ "$LINUX" == "true" ] && [ "$WSL" == "true" ] ; then
-            { find $BOOKMARK/brunch-toolkit-workspace 2> /dev/null ; rm -rf $BOOKMARK/brunch-toolkit-workspace/ 2> /dev/null ; mkdir $BOOKMARK/brunch-toolkit-workspace ; echo "Brunch Toolkit workspace has been cleaned." ; } || { mkdir $BOOKMARK/brunch-toolkit-workspace ; echo "Brunch Toolkit workspace has been created." ; }
-             echo "Preparing to extract selected Brunch files, please wait..."
+            { find $BOOKMARK/brunch-toolkit-workspace 2> /dev/null ; rm -rf $BOOKMARK/brunch-toolkit-workspace/ 2> /dev/null ; mkdir $BOOKMARK/brunch-toolkit-workspace ; echo "Bwunch Toowkit wowkspace has been cweanyed." ; } || { mkdir $BOOKMARK/brunch-toolkit-workspace ; echo "Bwunch Toowkit wowkspace has been cweated." ; }
+             echo "Pwepawing to extwact sewected Bwunch fiwes, pwease wait..."
             sudo tar zxvf $BOOKMARK/$BRUNCH -C $BOOKMARK/brunch-toolkit-workspace
             installercheck
         else
-            { find $DOWNLOADS/brunch-toolkit-workspace 2> /dev/null ; rm -rf ~Downloads/brunch-toolkit-workspace/ 2> /dev/null ; mkdir $DOWNLOADS/brunch-toolkit-workspace ; echo "Brunch Toolkit workspace has been cleaned." ; } || { mkdir $DOWNLOADS/brunch-toolkit-workspace ; echo "Brunch Toolkit workspace has been created." ; }
+            { find $DOWNLOADS/brunch-toolkit-workspace 2> /dev/null ; rm -rf ~Downloads/brunch-toolkit-workspace/ 2> /dev/null ; mkdir $DOWNLOADS/brunch-toolkit-workspace ; echo "Bwunch Toowkit wowkspace has been cweanyed." ; } || { mkdir $DOWNLOADS/brunch-toolkit-workspace ; echo "Bwunch Toowkit wowkspace has been cweated." ; }
         fi
         echo ""
-        echo "Please select which kind of installation you'd prefer."
+        echo "Pwease sewect which kind of instawwation you'd pwefew."
         echo ""
         getdestination
     }
@@ -1217,7 +1217,7 @@ fi
     getdestination(){
         select INSTALLTYPE in "Singleboot only Chrome OS" "Dualboot with another OS" Quit; do
         if [ -z "$INSTALLTYPE" ] ; then
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         elif [[ $INSTALLTYPE =~ .*"OS".* ]] ; then
             selectdst
         elif [ "$INSTALLTYPE" == "Quit" ] ; then
@@ -1227,79 +1227,79 @@ fi
     }
 
     selectdst(){
-        if [[ "$INSTALLTYPE" =~ .*"Single".* ]] ; then
+        if [[ "$INSTALLTYPE" =~ .*"Singwe".* ]] ; then
             echo ""
             echo "+---------------------------------------------------------------+"
-            echo "|                  Disks present on the device                  |"
+            echo "|                  Disks pwesent on the device                  |"
             echo "+---------------------------------------------------------------+"
             echo ""
             lsblk -po NAME,SIZE,TYPE | grep "[smn][dmv]" | grep -Ev "part" | awk '{print $1"        "$2}' | tr -s "       "
             echo ""
-            echo "Please select which of these disks you would like to install to."
-            echo "This will erase all contents of that disk!"
-            echo "Selected disk must have at least 14GB of free space."
+            echo "Pwease sewect which of these disks you wouwd wike to instaww to."
+            echo "This wiww ewase aww contents of that disk ;;w;;"
+            echo "Sewected disk must have at weast 14GB of fwee space."
             echo ""
             POSSIBLEOUTS=$(lsblk -po NAME,SIZE,TYPE | grep "[smn][dmv]" | grep -Ev "part" | awk '{print $1}')
-        elif [[ "$INSTALLTYPE" =~ .*"Dual".* ]] ; then
+        elif [[ "$INSTALLTYPE" =~ .*"Duaw".* ]] ; then
             echo ""
             echo "+---------------------------------------------------------------+"
-            echo "|               Partitions present on the device                |"
+            echo "|               Pawtitions pwesent on the device                |"
             echo "+---------------------------------------------------------------+"
             echo ""
             lsblk -po NAME,SIZE,TYPE | grep "[smn][dmv]" | grep -Ev "disk"  | awk '{print $1"        "$2}' | tr -d "\`├─|-"
             echo ""
-            echo "Please select the partition you would like to install to."
-            echo "Selected partition must have at least 14GB of free space."
-            echo "If you do not have a partition prepared, please make one and try again."
-            echo "NTFS and EXT4 formats are supported, EXT4 is suggested."
+            echo "Pwease sewect the pawtition you wouwd wike to instaww to."
+            echo "Sewected pawtition must have at weast 14GB of fwee space."
+            echo "If you do nyot have a pawtition pwepawed, pwease make onye and twy again."
+            echo "NTFS and EXT4 fowmats awe suppowted, EXT4 is suggested."
             echo ""
             POSSIBLEOUTS=$(lsblk -po NAME,SIZE,TYPE | grep "[smn][dmv]"  | grep -Ev "disk" | awk '{print $1}' | tr -d "\`├─|-")
         fi
         select DESTINATION in ${POSSIBLEOUTS} Quit; do
         if [ -z "$DESTINATION" ] ; then
-           echo "[ERROR] Invalid option"
+           echo "[EWWOW] Invawid option"
         elif [ "$DESTINATION" == "Quit" ] ; then
             cleanexit
         elif [[ "$DESTINATION" =~ .*"dev".* ]] ; then
-            echo "Selected $DESTINATION"
+            echo "Sewected $DESTINATION"
             setdst
         else
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         fi
         done
         }
 
     setdst(){
-    if [[ "$INSTALLTYPE" =~ .*"Single".* ]] ; then
+    if [[ "$INSTALLTYPE" =~ .*"Singwe".* ]] ; then
         installercheck
-    elif [[ "$INSTALLTYPE" =~ .*"Dual".* ]] ; then
-        find ~/tmpmount > /dev/null || { mkdir ~/tmpmount 2> /dev/null ; echo "Mountpoint created." ; }
+    elif [[ "$INSTALLTYPE" =~ .*"Duaw".* ]] ; then
+        find ~/tmpmount > /dev/null || { mkdir ~/tmpmount 2> /dev/null ; echo "Mountpoint cweated." ; }
         sudo umount ~/tmpmount 2> /dev/null
-        { sudo mount "$DESTINATION" ~/tmpmount 2> /dev/null ; echo "Destination mounted." ; } || { echo "[ERROR]  Brunch Toolkit could not mount the destination." ; echo "If destination is an NTFS partiton, please make sure any Windows installations were shut down cleanly." ; cleanexit ; }
+        { sudo mount "$DESTINATION" ~/tmpmount 2> /dev/null ; echo "Destinyation mounted." ; } || { echo "[EWWOW]  Bwunch Toowkit couwd nyot mount the destinyation." ; echo "If destinyation is an NTFS pawtiton, pwease make suwe any Windows instawwations wewe shut down cweanwy." ; cleanexit ; }
         setsize
     fi
     }
 
     setsize(){
         echo ""
-        echo "What size in GB would you like the dualboot img to be?"
-        echo "It must be greater than 14, but smaller than the destination."
+        echo "What size in GB wouwd you wike the duawboot img to be?"
+        echo "It must be gweatew than 14, but smawwew than the destinyation."
         echo ""
         SIZEP1=$(df -h "$DESTINATION" | awk 'NR==2 {print $4}')
         SIZEP2=$(lsblk -po NAME,SIZE "$DESTINATION" | grep "[smn][dmv]" | grep -Ev "disk" | awk '{print $1"            "$2}')
-        echo "Destination:    Total Size:    Avaliable:"
+        echo "Destinyation:    Totaw Size:    Avawiabwe:"
         echo "$SIZEP2            $SIZEP1"
         echo ""
         choosesize
     }
 
     choosesize(){
-    read -rp "Please enter a number: " SIZE
+    read -rp "Pwease entew a nyumbew: " SIZE
     case $SIZE in
-        [0-9]|1[0-3] ) echo "Entered value is too small" ; choosesize;;
-   1[4-9]|[2-9][0-9] ) echo "Entered value is OK!" ; installercheck;;
-     [1-9][0-9][0-9]* ) echo "Entered value is OK!" ; installercheck;;
-                  * ) echo "[ERROR] Invalid option, Please enter a number greater than 14." ; choosesize;;
+        [0-9]|1[0-3] ) echo "Entewed vawue is too smaww" ; choosesize;;
+   1[4-9]|[2-9][0-9] ) echo "Entewed vawue is OK >w<" ; installercheck;;
+     [1-9][0-9][0-9]* ) echo "Entewed vawue is OK ;;w;;" ; installercheck;;
+                  * ) echo "[EWWOW] Invawid option, Pwease entew a nyumbew gweatew than 14." ; choosesize;;
         esac
         cleanexit
     }
@@ -1322,14 +1322,14 @@ fi
 
     trueinstall() {
         if [[ "$INSTALLTYPE" =~ .*"Single".* ]] ; then
-            echo "Launching Brunch install script, please wait..."
+            echo "Waunching Bwunch instaww scwipt, pwease wait..."
             sudo bash chromeos-install -dst $DESTINATION
             cleanexit
         elif [[ "$INSTALLTYPE" =~ .*"Dual".* ]] ; then
-            echo "Launching Brunch install script, please wait..."
+            echo "Waunching Bwunch instaww scwipt, pwease wait..."
             sudo bash chromeos-install -dst ~/tmpmount/chromeos.img -s $SIZE
-            echo "Copy the boot entry from the above text and save it someplace safe!"
-            echo "Please enter that boot entry into your prefered grub installation."
+            echo "Copy the boot entwy fwom the abuv text and save it somepwace safe (・\`ω´・)"
+            echo "Pwease entew that boot entwy into youw pwefewed gwub instawwation."
             cleanexit
         fi
     }
@@ -1337,30 +1337,30 @@ fi
 # Debug ending script. prevents accidental installs or updates while testing.
     debuginstall() {
         if [[ "$INSTALLTYPE" =~ .*"Single".* ]] ; then
-            echo "Launching Brunch install script, please wait..."
-            echo "sudo chromeos-install -dst $DESTINATION"
-            echo "No install has happened, exiting debug mode..."
+            echo "Waunching Bwunch instaww scwipt, pwease wait..."
+            echo "sudo chwomeos-instaww -dst $DESTINATION"
+            echo "Nyo instaww has happenyed, exiting debug mode..."
             cleanexit
         elif [[ "$INSTALLTYPE" =~ .*"Dual".* ]] ; then
-            echo "Launching Brunch install script, please wait..."
-            echo "sudo chromeos-install -dst ~/tmpmount/chromeos.img -s $SIZE"
-            echo "Copy the boot entry from the above text and save it someplace safe"
-            echo "Please enter that boot entry into your prefered grub installation."
-            echo "No install has happened, exiting debug mode..."
+            echo "Waunching Bwunch instaww scwipt, pwease wait..."
+            echo "sudo chwomeos-instaww -dst ~/tmpmount/chwomeos.img -s $SIZE"
+            echo "Copy the boot entwy fwom the abuv text and save it somepwace safe"
+            echo "Pwease entew that boot entwy into youw pwefewed gwub instawwation."
+            echo "Nyo instaww has happenyed, exiting debug mode..."
             cleanexit
         fi
     }
 
     NBtrueinstall() {
         if [[ "$INSTALLTYPE" =~ .*"Single".* ]] ; then
-            echo "Launching Brunch install script, please wait..."
+            echo "Waunching Bwunch instaww scwipt, pwease wait..."
             sudo bash $DOWNLOADS/brunch-toolkit-workspace/chromeos-install.sh -src $DOWNLOADS/$CHROME -dst $DESTINATION
             cleanexit
         elif [[ "$INSTALLTYPE" =~ .*"Dual".* ]] ; then
-            echo "Launching Brunch install script, please wait..."
+            echo "Waunching Bwunch instaww scwipt, pwease wait..."
             sudo bash $DOWNLOADS/brunch-toolkit-workspace/chromeos-install.sh -src $DOWNLOADS/$CHROME -dst ~/tmpmount/chromeos.img -s $SIZE
-            echo "Copy the boot entry from the above text and save it someplace safe"
-            echo "Please enter that boot entry into your prefered grub installation."
+            echo "Copy the boot entwy fwom the abuv text and save it somepwace safe"
+            echo "Pwease entew that boot entwy into youw pwefewed gwub instawwation."
             cleanexit
         fi
     }
@@ -1368,22 +1368,22 @@ fi
 # Debug ending script. prevents accidental installs or updates while testing.
     NBdebuginstall() {
         if [[ "$INSTALLTYPE" =~ .*"Single".* ]] ; then
-            echo "Launching Brunch install script, please wait..."
-            echo "sudo bash $DOWNLOADS/brunch-toolkit-workspace/chromeos-install.sh -src $DOWNLOADS/$CHROME -dst $DESTINATION"
-            echo "No install has happened, exiting debug mode..."
+            echo "Waunching Bwunch instaww scwipt, pwease wait..."
+            echo "sudo bash $DOWNLOADS/bwunch-toowkit-wowkspace/chwomeos-instaww.sh -swc $DOWNLOADS/$CHROME -dst $DESTINATION"
+            echo "Nyo instaww has happenyed, exiting debug mode..."
             cleanexit
         elif [[ "$INSTALLTYPE" =~ .*"Dual".* ]] ; then
-            echo "Launching Brunch install script, please wait..."
-            echo "sudo bash $DOWNLOADS/brunch-toolkit-workspace/chromeos-install.sh -src $DOWNLOADS/$CHROME -dst ~/tmpmount/chromeos.img -s $SIZE"
-            echo "Copy the boot entry from the above text and save it someplace safe"
-            echo "Please enter that boot entry into your prefered grub installation."
-            echo "No install has happened, exiting debug mode..."
+            echo "Waunching Bwunch instaww scwipt, pwease wait..."
+            echo "sudo bash $DOWNLOADS/bwunch-toowkit-wowkspace/chwomeos-instaww.sh -swc $DOWNLOADS/$CHROME -dst ~/tmpmount/chwomeos.img -s $SIZE"
+            echo "Copy the boot entwy fwom the abuv text and save it somepwace safe"
+            echo "Pwease entew that boot entwy into youw pwefewed gwub instawwation."
+            echo "Nyo instaww has happenyed, exiting debug mode..."
             cleanexit
         fi
     }
 
     wsltrueinstall() {
-            echo "Launching Brunch install script, please wait..."
+            echo "Waunching Bwunch instaww scwipt, pwease wait..."
             sudo bash $BOOKMARK/brunch-toolkit-workspace/chromeos-install.sh -src $BOOKMARK/$CHROME -dst $BOOKMARK/brunch-toolkit-workspace/chromeos.img
             getetcher
             cleanexit
@@ -1391,7 +1391,7 @@ fi
 
 # Debug ending script. prevents accidental installs or updates while testing.
     wsldebuginstall() {
-            echo "Launching Brunch install script, please wait..."
+            echo "Waunching Bwunch instaww scwipt, pwease wait..."
             echo "sudo bash $BOOKMARK/brunch-toolkit-workspace/chromeos-install.sh -src $BOOKMARK/$CHROME -dst $BOOKMARK/brunch-toolkit-workspace/chromeos.img"
             getetcher
             cleanexit
@@ -1403,8 +1403,8 @@ fi
     if [ -z "$ETCHER" ] ; then
         curl -L -O --progress-bar $ETCHERLINK
     fi
-    echo "The Etcher window should open shortly, please select your chromeos.img and your USB to write the img."
-    echo "It should be located in $BOOKMARK/brunch-toolkit-workspace/chromeos.img"
+    echo "The Etchew window shouwd open showtwy, pwease sewect youw chwomeos.img and youw USB to wwite the img."
+    echo "It shouwd be wocated in $BOOKMARK/bwunch-toowkit-wowkspace/chwomeos.img"
     $ETCHER
     }
 
@@ -1414,7 +1414,7 @@ fi
 
     editgrubconfig(){
         FROMMENU=false
-        echo "Loading grub configuration, please wait..."
+        echo "Woading gwub configuwation, pwease wait..."
         if [ -z "$EDITOR" ]; then EDITOR=nano; fi
             source=$(rootdev -d)
         if (expr match "$source" ".*[0-9]$" >/dev/null); then
@@ -1443,12 +1443,12 @@ fi
         #    GRUBHYPER=true
         #fi
         if [[ "$NOOP" == "true" ]] ; then
-            echo "No Framework Options currently selected"
-            echo "Select 'Update Grub' if you want to continue without framework options."
+            echo "Nyo Fwamewowk Options cuwwentwy sewected"
+            echo "Sewect 'Update Gwub' if you want to continyue without fwamewowk options."
             echo ""
-            echo "What would you like to do?"
+            echo "What wouwd you wike to do?"
             echo ""
-            select GRUBOPT in "Add framework option" "Backup Grub" "Restore Grub" "Update Grub" Quit; do
+            select GRUBOPT in "Add fwamewowk option" "Backup Gwub" "Westowe Gwub" "Update Gwub" Quit; do
             if [[ $GRUBOPT =~ .*"Add".* ]]; then
                 addfwo
             elif [[ $GRUBOPT =~ .*"Backup".* ]]; then
@@ -1456,76 +1456,76 @@ fi
                 grubbackup
             elif [[ $GRUBOPT =~ .*"Restore".* ]]; then
                 grubrestore
-            elif [ "$GRUBOPT" == "Update Grub" ] ; then
+            elif [ "$GRUBOPT" == "Westowe Grub" ] ; then
                 updategrub
             elif [ "$GRUBOPT" == "Quit" ] ; then
                 sudo umount /root/tmpgrub
                 cleanexit
             else
-                echo "[ERROR] Invalid option"
+                echo "[EWWOW] Invawid option"
             fi
             done
         elif [[ -n "$GRUBOPTIONS" ]] ; then
-        echo "Framework options found!"
+        echo "Fwamewowk options found (・\`ω´・)"
         echo "$GRUBOPTIONS" | cut -d' ' -f1 | sed 's/,/\n/g'
         echo ""
-        echo "What would you like to do?"
+        echo "What wouwd you wike to do?"
         echo ""
-        select GRUBOPT in "Add framework option" "Remove framework option" "Backup Grub" "Restore Grub" Quit; do
+        select GRUBOPT in "Add fwamewowk option" "Wemuv fwamewowk option" "Backup Gwub" "Westowe Gwub" Quit; do
         if [[ $GRUBOPT =~ .*"Add".* ]]; then
             addfwo
         elif [[ $GRUBOPT =~ .*"Backup".* ]]; then
                 FROMMENU=true
                 grubbackup
-        elif [[ $GRUBOPT =~ .*"Restore".* ]]; then
+        elif [[ $GRUBOPT =~ .*"Westowe".* ]]; then
                 grubrestore
-        elif [[ $GRUBOPT =~ .*"Remove".* ]]; then
+        elif [[ $GRUBOPT =~ .*"Wemuv".* ]]; then
             echo ""
-            echo "Choose which option to remove."
+            echo "Choose which option to wemuv."
             echo ""
             removefwo
         elif [ "$GRUBOPT" == "Quit" ] ; then
             sudo umount /root/tmpgrub
             cleanexit
         else
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         fi
         done
         else
-        echo "Framework options not found..."
+        echo "Fwamewowk options nyot found..."
         echo ""
-        echo "What would you like to do?"
+        echo "What wouwd you wike to do?"
         echo ""
-        select GRUBOPT in "Add framework option" "Backup Grub" "Restore Grub" Quit; do
+        select GRUBOPT in "Add fwamewowk option" "Backup Gwub" "Westowe Gwub" Quit; do
         if [[ $GRUBOPT =~ .*"Add".* ]]; then
             addfwo
         elif [[ $GRUBOPT =~ .*"Backup".* ]]; then
                 FROMMENU=true
                 grubbackup
-        elif [[ $GRUBOPT =~ .*"Restore".* ]]; then
+        elif [[ $GRUBOPT =~ .*"Westowe".* ]]; then
                 grubrestore
         elif [ "$GRUBOPT" == "Quit" ] ; then
             sudo umount /root/tmpgrub
             cleanexit
         else
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         fi
         done
         fi
     }
 
     addfwo(){
-        echo "Current framework options:"
+        echo "Cuwwent fwamewowk options:"
         echo "$GRUBOPTIONS" | cut -d' ' -f1 | sed 's/,/\n/g'
         echo ""
-        select GRUBADD in "Add an option manually" "Get options list" "Remove an option" "Use these options" ${FRAMEWORKOPTIONS} Quit; do
+        select GRUBADD in "Add an option manyuawwy" "Get options wist" "Wemuv an option" "Use these options" ${FRAMEWORKOPTIONS} Quit; do
         if [[ -z $GRUBADD ]] ; then
             echo "[ERROR] Invalid option"
-        elif [[ "$GRUBADD" == "Add an option manually" ]] ; then
+        elif [[ "$GRUBADD" == "Add an option manyuawwy" ]] ; then
             manualaddition
-        elif  [[ "$GRUBADD" == "Get options list" ]] ; then
+        elif  [[ "$GRUBADD" == "Get options wist" ]] ; then
             getfolist
-        elif  [[ "$GRUBADD" == "Remove an option" ]] ; then
+        elif  [[ "$GRUBADD" == "Wemuv an option" ]] ; then
             removefwo
         elif  [[ "$GRUBADD" == "Use these options" ]] ; then
             updategrub
@@ -1534,18 +1534,18 @@ fi
             cleanexit
         else
             if [[ "$GRUBOPTIONS" =~ .*"$GRUBADD".* ]] ; then
-                echo "This option is already added!"
+                echo "This option is awweady added (・\`ω´・)"
                 echo ""
                 GRUBADD=
                 addfwo
             elif [[ "$GRUBOPTIONS" =~ .*"alt_touchpad".* ]] && [[ "$GRUBADD" =~ .*"alt_touchpad".* ]] ; then
-                echo "You can only use one touchpad option at a time!"
+                echo "You can onwy use onye touchpad option at a time ;;w;;"
                 echo ""
                 GRUBADD=
                 addfwo
             else
                 GRUBOPTIONS="$GRUBOPTIONS,$GRUBADD"
-                echo "$GRUBADD option added!"
+                echo "$GRUBADD option added >w<"
                 echo ""
                 GRUBADD=
                 addfwo
@@ -1556,12 +1556,12 @@ fi
 
     manualaddition(){
             echo ""
-            echo "You can type a valid framework option in manually."
-            echo "The script will check it against all known framework options."
-            echo "If it is not a recognized option, you will be warned (it will still be added)"
-            echo "(You do not need to include a trailing comma, this is added automatically)"
+            echo "You can type a vawid fwamewowk option in manyuawwy."
+            echo "The scwipt wiww check it against aww knyown fwamewowk options."
+            echo "If it is nyot a wecognyized option, you wiww be wawnyed (it wiww stiww be added)"
+            echo "(You do nyot nyeed to incwude a twaiwing comma, this is added automaticawwy)"
             echo ""
-            read -rp "Please enter an option to add: " ADGRUB
+            read -rp "Pwease entew an option to add: " ADGRUB
             case $ADGRUB in
             * ) manaddsub;;
             esac
@@ -1569,29 +1569,29 @@ fi
 
     manaddsub(){
         if [[ -z "$ADGRUB" ]] ; then
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
             manualaddition
         elif [[ "$GRUBOPTIONS" =~ .*"$ADGRUB".* ]] ; then
-            echo "[!] This option is already added!"
+            echo "[ owo ] This option is awweady added owo"
         elif [[ "$GRUBOPTIONS" =~ .*"alt_touchpad".* ]] && [[ "$ADGRUB" =~ .*"alt_touchpad".* ]] ; then
-            echo "[!] You can only use one touchpad option at a time!"
+            echo "[ ^w^ ] You can onwy use onye touchpad option at a time ^w^"
         elif [[ ! "$FRAMEWORKOPTIONSALL" =~ .*"$ADGRUB" ]] ; then
-            echo "[!] Not a recognized framework option!"
-            echo "It will still be added, and you can remove it if you'd like."
+            echo "[ owo ] Nyot a wecognyized fwamewowk option owo"
+            echo "It wiww stiww be added, and you can wemuv it if you'd wike."
             GRUBOPTIONS="$GRUBOPTIONS,$ADGRUB"
-            echo "$ADGRUB option added!"
+            echo "$ADGRUB option added (・\`ω´・)"
             echo ""
             ADGRUB=
             addfwo
         elif [[ -n $GRUBOPTIONS ]] ; then
             GRUBOPTIONS="$GRUBOPTIONS,$ADGRUB"
-            echo "$ADGRUB option added!"
+            echo "$ADGRUB option added ^w^"
             echo ""
             ADGRUB=
             addfwo
         elif [[ -z $GRUBOPTIONS ]] ; then
             GRUBOPTIONS="$ADGRUB"
-            echo "$ADGRUB option added!"
+            echo "$ADGRUB option added ^w^"
             echo ""
             ADGRUB=
             addfwo
@@ -1610,16 +1610,16 @@ fi
     fi
     echo "$GRUBOPTIONS"
     echo ""
-    echo "Choose which framework option to remove."
-    echo "You can add them back later."
+    echo "Choose which fwamewowk option to wemuv."
+    echo "You can add them back watew."
     echo ""
-    echo "Current framework options:"
+    echo "Cuwwent fwamewowk options:"
     echo "$GRUBOPTIONS" | cut -d' ' -f1 | sed 's/,/\n/g'
     GRUBOPTIONSSPLIT=$(echo "$GRUBOPTIONS" | cut -d' ' -f1 | sed 's/,/ /g')
     echo ""
     select RMGRUB in "Add an option" "Use these options" ${GRUBOPTIONSSPLIT} Quit; do
         if [[ -z "$RMGRUB" ]]; then
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         elif [[ $RMGRUB == "Add an option" ]]; then
             addfwo
         elif [[ $RMGRUB == "Use these options" ]]; then
@@ -1662,11 +1662,11 @@ fi
     updategrubsub(){
         if [[ -z "$FINDOPTIONS" ]] ; then
             # if options= is not there, find cros_debug and add options directly after.
-            echo "Options added!"
+            echo "Options added ^w^"
             sudo sed -i 's/cros_debug.*/& options=/g' /root/tmpgrub/efi/boot/grub.cfg
             sudo sed -i "s/options=/$GRUBOPTIONS/g" /root/tmpgrub/efi/boot/grub.cfg
         else
-            echo "Options updated!"
+            echo "Options updated ^w^"
             sudo sed -i "s/options=$GRUBORIGINAL/$GRUBOPTIONS/g" /root/tmpgrub/efi/boot/grub.cfg
         fi
         echo ""
@@ -1676,9 +1676,9 @@ fi
 
     removegrub(){
         if [[ -z "$FINDOPTIONS" ]] ; then
-            echo "No change!"
+            echo "Nyo change UwU"
         else
-            echo "Options removed!"
+            echo "Options wemuvd owo"
             sudo sed -i "s/options=$GRUBORIGINAL//g" /root/tmpgrub/efi/boot/grub.cfg
         fi
         echo ""
@@ -1687,22 +1687,22 @@ fi
     }
 
     grubbackupcheck(){
-        echo "Current Grub Configuration (before modification)"
+        echo "Cuwwent Gwub Configuwation (befowe modification)"
         echo "*********************************************************************"
         echo ""
         cat /root/tmpgrub/efi/boot/grub.cfg
         echo ""
         echo "*********************************************************************"
         echo ""
-        echo "[!] This tool is still in beta and may misbehave"
-        echo "Would you like to make a backup of your grub file before continuing?"
+        echo "[ ^w^ ] This toow is stiww in beta and may misbehave"
+        echo "Wouwd you wike to make a backup of youw gwub fiwe befowe continyuing?"
         echo ""
         select GRUBBAK in "Make backup" "No backup" Quit; do
         if [[ $GRUBBAK == "Make backup" ]]; then
             grubbackup
         elif [[ $GRUBBAK == "No backup" ]]; then
             echo ""
-            echo "[!] Continuing without making a backup."
+            echo "[ ;;w;; ] Continyuing without making a backup."
             echo ""
             BACKUPGRUB=false
             updategrub
@@ -1710,7 +1710,7 @@ fi
             sudo umount /root/tmpgrub
             cleanexit
         else
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         fi
         done
     }
@@ -1720,26 +1720,26 @@ fi
         if [[ -z "$ALREADYBACKUP" ]] ; then
             sudo cp /root/tmpgrub/efi/boot/grub.cfg /usr/local/bin/brunch-toolkit-assets/grub.btgc 2> /dev/null
             echo ""
-            echo "Grub.cfg has been backed up!"
+            echo "Gwub.cfg has been backed up ;;w;;"
             echo ""
             BACKUPGRUB=false
             updategrub
         else
             echo ""
-            echo "[!] There is already a backup file, would you like to replace it?"
+            echo "[ ;;w;; ] Thewe is awweady a backup fiwe, wouwd you wike to wepwace it?"
             echo ""
-            select GRUBBAK in "Replace backup" "Keep old backup" Quit; do
-        if [[ $GRUBBAK == "Replace backup" ]]; then
+            select GRUBBAK in "Wepwace backup" "Keep old backup" Quit; do
+        if [[ $GRUBBAK == "Wepwace backup" ]]; then
             rm -rf /usr/local/bin/brunch-toolkit-assets/*.btgc
             yes | sudo cp -rf /root/tmpgrub/efi/boot/grub.cfg /usr/local/bin/brunch-toolkit-assets/grub.btgc
             echo ""
-            echo "Grub.cfg has been backed up!"
+            echo "Gwub.cfg has been backed up (・\`ω´・)"
             echo ""
             BACKUPGRUB=false
             updategrub
         elif [[ $GRUBBAK == "Keep old backup" ]]; then
             echo ""
-            echo "[!] Continuing with previous backup."
+            echo "[ UwU ] Continyuing with pwevious backup."
             echo ""
             BACKUPGRUB=false
             updategrub
@@ -1747,7 +1747,7 @@ fi
             sudo umount /root/tmpgrub
             cleanexit
         else
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         fi
         done
         fi
@@ -1757,14 +1757,14 @@ fi
         ALREADYBACKUP=$(ls /usr/local/bin/brunch-toolkit-assets/*.btgc 2> /dev/null)
         if [[ -z "$ALREADYBACKUP" ]] ; then
             echo ""
-            echo "There is no backup!"
-            echo "Returning to menu..."
+            echo "Thewe is nyo backup UwU "
+            echo "Wetuwnying to menyu..."
             editgrubconfig
         else
             sudo cp /usr/local/bin/brunch-toolkit-assets/grub.btgc /root/tmpgrub/efi/boot/grub.cfg 2> /dev/null
             echo ""
-            echo "Grub.cfg has been restored from a backup!"
-            echo "Returning to menu..."
+            echo "Gwub.cfg has been westowed fwom a backup (・\`ω´・) "
+            echo "Wetuwnying to menyu..."
             editgrubconfig
         fi
     }
@@ -1777,142 +1777,142 @@ fi
 # grabs and displays a changelog from the script itself (here)
     legacychangelog() {
         echo "
-        Legacy Changelog:
+        Wegacy Changewog:
 
         v0.1:
-        Initial release
-        -It updated Brunch! That was all
+        Inyitiaw wewease
+        -It updated Bwunch ;;w;;  That was aww
 
         v0.2:
-        Add Brunch downloading funtions
-        Add sanity checks before updating
-        Overall organization improvements
+        Add Bwunch downwoading funtions
+        Add sanyity checks befowe updating
+        Ovewaww owganyization impwuvments
 
         v0.3:
-        Add DEBUG changelog function
-        Add DEBUG version function
-        Add DEBUG help function
-        Add combined update function
-        Add current OS check by DennisLfromGA
+        Add DEBUG changewog function
+        Add DEBUG vewsion function
+        Add DEBUG hewp function
+        Add combinyed update function
+        Add cuwwent OS check by DennyisWfwomGA
         Add code comments
-        Changed script name to Brunch Toolkit
-        Overall organization improvements
+        Changed scwipt nyame to Bwunch Toowkit
+        Ovewaww owganyization impwuvments
 
         v0.4:
-        Improvements to Brunch update downloader
-        - Now checks against files and current version
-        - Combined download and file select functions
-        Add DEBUG offline function
-        - Offline mode disables download prompts and
-          has slightly faster load times
-        - Offline mode also has a special backup handler
-          for if an update file isn't found
+        Impwuvments to Bwunch update downwoadew
+        - Nyow checks against fiwes and cuwwent vewsion
+        - Combinyed downwoad and fiwe sewect functions
+        Add DEBUG offwinye function
+        - Offwinye mode disabwes downwoad pwompts and
+          has swightwy fastew woad times
+        - Offwinye mode awso has a speciaw backup handwew
+          fow if an update fiwe isn't found
         Add DEBUG quick function
-        - Allows the user to update without any prompts
-        - Uses default mode if there are multiple files
-        Set placeholders for other planned functions
+        - Awwows the usew to update without any pwompts
+        - Uses defauwt mode if thewe awe muwtipwe fiwes
+        Set pwacehowdews fow othew pwannyed functions
 
         v0.5:
-        Add DEBUG flag to prevent accidental installs while testing
-        - File operations are still permitted
-        Started work on Chrome OS update functions
-        - Downloads are not enabled yet
-        - Added file unzip
-        - Cleaned up scripts
-        Started work on seperate toolkit installer program
+        Add DEBUG fwag to pwevent accidentaw instawws whiwe testing
+        - Fiwe opewations awe stiww pewmitted
+        Stawted wowk on Chwome OS update functions
+        - Downwoads awe nyot enyabwed yet
+        - Added fiwe unzip
+        - Cweanyed up scwipts
+        Stawted wowk on sepewate toowkit instawwew pwogwam
 
         v0.6
-        Cleaned up code
-        - Fixed typo in update function preventing updates
-        - switched instances of 'ls' to 'find'
-        - updated 'egrep ...' calls to 'grep -E ...'
-        Added section to Version for supported recoveries by Sebanc
+        Cweanyed up code
+        - Fixed typo in update function pweventing updates
+        - switched instances of 'ws' to 'find'
+        - updated 'egwep ...' cawws to 'gwep -E ...'
+        Added section to Vewsion fow suppowted wecuvwies by Sebanc
 
         v0.6
-        Cleaned up code
-        - Fixed typo in update function preventing updates
-        - switched instances of 'ls' to 'find'
-        - updated 'egrep ...' calls to 'grep -E ...'
-        Added section to Version for supported recoveries by Sebanc
+        Cweanyed up code
+        - Fixed typo in update function pweventing updates
+        - switched instances of 'ws' to 'find'
+        - updated 'egwep ...' cawws to 'gwep -E ...'
+        Added section to Vewsion fow suppowted wecuvwies by Sebanc
 
         v0.7
-        Added DEBUG compatibility check function
-        Added preliminary Linux Mode for non-brunch devices
-        - currently only running the script with -k is supported
+        Added DEBUG compatibiwity check function
+        Added pwewiminyawy Winyux Mode fow nyon-bwunch devices
+        - cuwwentwy onwy wunnying the scwipt with -k is suppowted
 
         v0.8
-        Added install function. Currently only working on Brunch devices
-        - The framework for linux device installs is mostly finished
-        Added recovery download function.
-        - Allows user to select from a list or type a board name
-        - File selection now unzips bin.zip entries automatically
-        Update functions and brunch install functions are considered DONE
-        New TODO list: Linux & WSL compatibility.
-        Added easter egg :)
+        Added instaww function. Cuwwentwy onwy wowking on Bwunch devices
+        - The fwamewowk fow winyux device instawws is mostwy finyished
+        Added wecuvwy downwoad function.
+        - Awwows usew to sewect fwom a wist ow type a boawd nyame
+        - Fiwe sewection nyow unzips bin.zip entwies automaticawwy
+        Update functions and bwunch instaww functions awe considewed DONyE
+        Nyew TODO wist: Winyux & WSW compatibiwity.
+        Added eastew egg :)
 
         v0.9
-        Added boot animation changing function.
-        - Only works on Brunch devices.
+        Added boot anyimation changing function.
+        - Onwy wowks on Bwunch devices.
 
         v1.0
-        Reworked Linux and WSL compatibility
-        - Script should now work fully on Brunch, most *buntu linux distros and WSL
-        Some code snippets were reworked for better compatibility
-        - Color text has been removed for compatibility with certain bash shells
-        - Hyperlinks changed to allow CTRL + Click when linking isn't supported
-        Brunch Mode now includes an installer for better toolkit access
+        Wewowked Winyux and WSW compatibiwity
+        - Scwipt shouwd nyow wowk fuwwy on Bwunch, most *buntu winyux distwos and WSW
+        Some code snyippets wewe wewowked fow bettew compatibiwity
+        - Cowow text has been wemuvd fow compatibiwity with cewtain bash shewws
+        - Hypewwinks changed to awwow CTWW + Cwick when winking isn't suppowted
+        Bwunch Mode nyow incwudes an instawwew fow bettew toowkit access
 
         v1.0.1b
-        Fixed bug with downloading boot_splash files
+        Fixed bug with downwoading boot_spwash fiwes
 
         v1.0.2b
-        Added new DOWNLOADS variable to allow pro users to have more control
+        Added nyew DOWNWOADS vawiabwe to awwow pwo usews to have mowe contwow
 
         v1.0.3b
-        Added new feature to Version and Cros Recovery downloading in Brunch Mode
-        - Now reminds user of which recovery they're currently using
-        Added check for sudo and sudo su to help mitigate errors
-        Added --legacychangelog (-lc) to view entire changelog
-        - updated --changelog (-c) to only display most recent changes
-        Added new check to boot animation changing function for previous installs
-        - Now includes a method to quickly reinstall previous animations on resets
-        - Added --quickbootsplash (-qb) to do this near instantly without input
+        Added nyew featuwe to Vewsion and Cwos Wecuvwy downwoading in Bwunch Mode
+        - Nyow weminds usew of which wecuvwy they'we cuwwentwy using
+        Added check fow sudo and sudo su to hewp mitigate ewwows
+        Added --wegacychangewog (-wc) to view entiwe changewog
+        - updated --changewog (-c) to onwy dispway most wecent changes
+        Added nyew check to boot anyimation changing function fow pwevious instawws
+        - Nyow incwudes a method to quickwy weinstaww pwevious anyimations on wesets
+        - Added --quickbootspwash (-qb) to do this nyeaw instantwy without input
 
         v1.0.4b
-        Add --shell (-s) to allow adding and modifying the crosh shell tools
-        - This feature is intended to work alongside an extention to modify crosh
-        - Get it here: https://github.com/WesBosch/chrome-secure-shell/releases/latest
+        Add --sheww (-s) to awwow adding and modifying the cwosh sheww toows
+        - This featuwe is intended to wowk awongside an extention to modify cwosh
+        - Get it hewe: https://github.com/WesBosch/chwome-secuwe-sheww/weweases/watest
 
         v1.0.5b
-        Add --grub (-g) to allow adding and modifying framework options.
-        - This feature is not expected to work perfectly and is not listed in the menu
-        Add --updatetoolkit (-u) to allow the user to download and install the newest brunch toolkit release.
+        Add --gwub (-g) to awwow adding and modifying fwamewowk options.
+        - This featuwe is nyot expected to wowk pewfectwy and is nyot wisted in the menyu
+        Add --updatetoowkit (-u) to awwow the usew to downwoad and instaww the nyewest bwunch toowkit wewease.
 
         v1.0.6b
-        Fixed typo preventing Linux Mode installations
+        Fixed typo pweventing Winyux Mode instawwations
 
         v1.0.7b
-        Allow NVME partitions and disks as destinations
-        Add Check for Ryzen CPUs (Needs tested)
-        Add beta grub editor to menu (Use with caution)
-        Attempt to fix Brunch Mode installation bug
+        Awwow NVME pawtitions and disks as destinyations
+        Add Check fow Wyzen CPUs (Nyeeds tested)
+        Add beta gwub editow to menyu (Use with caution)
+        Attempt to fix Bwunch Mode instawwation bug
 
         v1.0.8b
-        Remove wget, unzip and perl dependencies
-        (Thanks Sebanc for the help!)
+        Wemuv wget, unzip and peww dependencies
+        (Thanks Sebanc fow the hewp ;;w;; )
 
         v1.0.9b
-        Add PWA specific functions for quick/auto updating.
+        Add PWA specific functions fow quick/auto updating.
         "
         cleanexit
     }
 
     changelog(){
         echo "
-        Recent Changelog
+        Wecent Changewog
 
         v1.0.11b
-        Fix shell tools installer
+        Fix sheww toows instawwew
         "
         cleanexit
     }
@@ -1922,14 +1922,14 @@ fi
         OFFLINE=true
         setvars
         echo ""
-        echo "    Toolkit version: $TOOLVER"
+        echo "    Toowkit vewsion: $TOOLVER"
         getcpu
         getvirt
         getcrosver
         echo "    System: $CROSVER"
-        echo "    Kernel: $KERNEL1.$KERNEL2.$KERNEL3"
+        echo "    Kewnyew: $KERNEL1.$KERNEL2.$KERNEL3"
         if [ "$LINUX" == "false" ] ; then
-            echo "    Recovery: ${CRB^}"
+            echo "    Wecuvwy: ${CRB^}"
         fi
         getbrunchver
         echo ""
@@ -1940,7 +1940,7 @@ fi
     getvirt() {
         VIRT=$(grep -Ewo 'vmx|svm|hypervisor' /proc/cpuinfo  | sort | uniq | sed -e 's/svm/    AMD-V Virtualization supported/g' -e 's/vmx/    Intel Virtualization supported/g' -e 's/hypervisor/    Hypervisor detected/g')
         if [ -z "$VIRT" ]; then
-            echo "    Virtualization is not avaliable or not detected"
+            echo "    Viwtuawization is nyot avawiabwe ow nyot detected"
         else
             echo "$VIRT"
         fi
@@ -1960,9 +1960,9 @@ fi
 # Determine if user is running Brunch or another system.
     getbrunchver() {
         if [ -z "$RELEASE" ]; then
-        echo "    This script tastes better with Brunch!"
+        echo "    This scwipt tastes bettew with Bwunch owo"
         else
-        echo "    Framework Version: $RELEASE"
+        echo "    Fwamewowk Vewsion: $RELEASE"
         fi
     }
 
@@ -1979,144 +1979,144 @@ fi
     help() {
     if [ "$LINUX" == "false" ] ; then
         echo "
-    Avaliable Brunch Mode Debug Commands:
+    Avawiabwe Bwunch Mode Debug Commands:
 
-    --bootsplash (-b)
-        Skips the main menu and starts the boot animation changer.
+    --bootspwash (-b)
+        Skips the main menyu and stawts the boot anyimation changew.
 
-    --brunch (-br)
-        Skips the main menu and starts the Brunch update function.
+    --bwunch (-bw)
+        Skips the main menyu and stawts the Bwunch update function.
 
-    --changelog (-c)
-        Displays a changlog for the last several updates of this script
+    --changewog (-c)
+        Dispways a changwog fow the wast sevewaw updates of this scwipt
 
-    --chrome (-cr)
-        Skips the main menu and starts the Chrome & Brunch update function.
+    --chwome (-cw)
+        Skips the main menyu and stawts the Chwome & Bwunch update function.
 
-    --compatibility (-k)
-        Displays helpful info about CPU compatibility.
-        This option should work on most linux distros.
+    --compatibiwity (-k)
+        Dispways hewpfuw info about CPU compatibiwity.
+        This option shouwd wowk on most winyux distwos.
 
     --debug (-d)
-        Tests the script without allowing updates or installs.
+        Tests the scwipt without awwowing updates ow instawws.
 
-    --grub (-g)
-        Allows the user to install and modify framework options in grub
-        This is a potentially dangerous option
+    --gwub (-g)
+        Awwows the usew to instaww and modify fwamewowk options in gwub
+        This is a potentiawwy dangewous option
 
-    --help (-h)
-        Displays this page.
-        Run the program without command line arguments for normal usage.
+    --hewp (-h)
+        Dispways this page.
+        Wun the pwogwam without command winye awguments fow nyowmaw usage.
 
-    --legacychangelog (-lc)
-        Displays the entire changlog of this script.
+    --wegacychangewog (-wc)
+        Dispways the entiwe changwog of this scwipt.
 
-    --install (-n)
-        Skips the main menu and starts the Brunch install function.
+    --instaww (-n)
+        Skips the main menyu and stawts the Bwunch instaww function.
 
-    --offline (-o)
-        Disables all internet functions of the tooklit.
-        It will not prompt for an internet connection at all.
-        Useful if you know you don't need to download anything.
+    --offwinye (-o)
+        Disabwes aww intewnyet functions of the tookwit.
+        It wiww nyot pwompt fow an intewnyet connyection at aww.
+        Usefuw if you knyow you don't nyeed to downwoad anything.
 
     --quick (-q)
-        This is an experimental quick update process.
-        Only use this if you know what you're doing!
-        The toolkit will update Brunch WITHOUT prompts using the
-        brunch file in $DOWNLOADS. (~/Downloads by default, it will only look for one)
-        If the latest release does not match the file it auto-downloads it.
-        If there are no brunch files it auto-downloads the latest.
-        If there are multiple files it will exit quick mode.
-        This is only meant to be used with one update file present.
+        This is an expewimentaw quick update pwocess.
+        Onwy use this if you knyow what you'we doing UwU 
+        The toowkit wiww update Bwunch WITHOUT pwompts using the
+        bwunch fiwe in $DOWNLOADS. (~/Downwoads by defauwt, it wiww onwy wook fow onye)
+        If the watest wewease does nyot match the fiwe it auto-downwoads it.
+        If thewe awe nyo bwunch fiwes it auto-downwoads the watest.
+        If thewe awe muwtipwe fiwes it wiww exit quick mode.
+        This is onwy meant to be used with onye update fiwe pwesent.
 
-    --quickbootsplash (-qb)
-        Checks for a previously installed boot animation, and resets the current one.
-        This is useful for when an update returns the animation to the default.
+    --quickbootspwash (-qb)
+        Checks fow a pweviouswy instawwed boot anyimation, and wesets the cuwwent onye.
+        This is usefuw fow when an update wetuwns the anyimation to the defauwt.
 
-    --quickignore (-qi)
-        Same as --quick but ignores the current version check,
-        allows users to update into the release they are already on.
-
-
-    --shell (-s)
-        Allows the user to install and modify crosh shell tools for brunch.
-
-    --updatetoolkit (-u)
-        Allows the user to download and install the newest brunch toolkit release.
-
-    --version (-v)
-        Displays useful system information including:
-        The version of the toolkit you're using
-        The kernel used by your system
-        Which version of Chrome OS you're on
-        Which version of Brunch you're on
-        Which recoveries are supported or recomended
+    --quickignyowe (-qi)
+        Same as --quick but ignyowes the cuwwent vewsion check,
+        awwows usews to update into the wewease they awe awweady on.
 
 
-    Usage Notes:
+    --sheww (-s)
+        Awwows the usew to instaww and modify cwosh sheww toows fow bwunch.
 
-        This toolkit looks for files in the $DOWNLOADS directory. (~/Downloads by default)
-        It does expect files to have the default filenames!
-        Brunch files must start with brunch and have a tar.gz extention.
-        Chrome revoveries must start with chromeos and have a .bin extention.
-        Downloading files will fail if the file exists already or if offline.
+    --updatetoowkit (-u)
+        Awwows the usew to downwoad and instaww the nyewest bwunch toowkit wewease.
+
+    --vewsion (-v)
+        Dispways usefuw system infowmation incwuding:
+        The vewsion of the toowkit you'we using
+        The kewnyew used by youw system
+        Which vewsion of Chwome OS you'we on
+        Which vewsion of Bwunch you'we on
+        Which wecuvwies awe suppowted ow wecomended
 
 
-    Additional assistance for this toolkit can be found at:
+    Usage Nyotes:
+
+        This toowkit wooks fow fiwes in the $DOWNLOADS diwectowy. (~/Downwoads by defauwt)
+        It does expect fiwes to have the defauwt fiwenyames UwU 
+        Bwunch fiwes must stawt with bwunch and have a taw.gz extention.
+        Chwome wevuvwies must stawt with chwomeos and have a .bin extention.
+        Downwoading fiwes wiww faiw if the fiwe exists awweady ow if offwinye.
+
+
+    Additionyaw assistance fow this toowkit can be found at:
     "
   elif [ "$LINUX" == "true" ] ; then
   echo "
-    Avaliable Linux Mode Debug Commands:
+    Avawiabwe Winyux Mode Debug Commands:
 
-    --changelog (-c)
-        Displays a changlog for the last several updates of this script
+    --changewog (-c)
+        Dispways a changwog fow the wast sevewaw updates of this scwipt
 
-    --compatibility (-k)
-        Displays helpful info about CPU compatibility.
-        This option should work on most linux distros.
+    --compatibiwity (-k)
+        Dispways hewpfuw info about CPU compatibiwity.
+        This option shouwd wowk on most winyux distwos.
 
     --debug (-d)
-        Tests the script without allowing updates or installs.
+        Tests the scwipt without awwowing updates ow instawws.
 
-    --help (-h)
-        Displays this page.
-        Run the program without command line arguments for normal usage.
+    --hewp (-h)
+        Dispways this page.
+        Wun the pwogwam without command winye awguments fow nyowmaw usage.
 
-    --legacychangelog (-lc)
-        Displays the entire changlog of this script.
+    --wegacychangewog (-wc)
+        Dispways the entiwe changwog of this scwipt.
 
-    --install (-n)
-        Skips the main menu and starts the Brunch install function.
+    --instaww (-n)
+        Skips the main menyu and stawts the Bwunch instaww function.
 
-    --offline (-o)
-        Disables all internet functions of the tooklit.
-        It will not prompt for an internet connection at all.
-        Useful if you know you don't need to download anything.
+    --offwinye (-o)
+        Disabwes aww intewnyet functions of the tookwit.
+        It wiww nyot pwompt fow an intewnyet connyection at aww.
+        Usefuw if you knyow you don't nyeed to downwoad anything.
 
-    --version (-v)
-        Displays useful system information including:
-        The version of the toolkit you're using
-        The kernel used by your system
-        Which version of Chrome OS you're on
-        Which version of Brunch you're on
-        Which recoveries are supported or recomended
-
-
-    Usage Notes:
-
-        This toolkit looks for files in the $DOWNLOADS directory. (~/Downloads by default)
-        It does expect files to have the default filenames!
-        Brunch files must start with brunch and have a tar.gz extention.
-        Chrome revoveries must start with chromeos and have a .bin extention.
-        Downloading files will fail if the file exists already or if offline.
+    --vewsion (-v)
+        Dispways usefuw system infowmation incwuding:
+        The vewsion of the toowkit you'we using
+        The kewnyew used by youw system
+        Which vewsion of Chwome OS you'we on
+        Which vewsion of Bwunch you'we on
+        Which wecuvwies awe suppowted ow wecomended
 
 
-    Additional assistance for this toolkit can be found at:
+    Usage Nyotes:
+
+        This toowkit wooks fow fiwes in the $DOWNLOADS diwectowy. (~/Downwoads by defauwt)
+        It does expect fiwes to have the defauwt fiwenyames ;;w;; 
+        Bwunch fiwes must stawt with bwunch and have a taw.gz extention.
+        Chwome wevuvwies must stawt with chwomeos and have a .bin extention.
+        Downwoading fiwes wiww faiw if the fiwe exists awweady ow if offwinye.
+
+
+    Additionyaw assistance fow this toowkit can be found at:
 "
     fi
     printf '        \e]8;;https://github.com/WesBosch/Brunch-Updater\e\\ https://github.com/WesBosch/Brunch-Updater \e]8;;\e\\\n'
         echo ""
-        echo "    Additional assistance for Brunch can be found at:
+        echo "    Additionyaw assistance fow Bwunch can be found at:
     "
     printf '        \e]8;;https://github.com/sebanc/brunch\e\\ https://github.com/sebanc/brunch \e]8;;\e\\\n'
     echo ""
@@ -2128,15 +2128,15 @@ fi
     compatibilitycheck(){
         echo ""
         echo "+---------------------------------------------------------------+"
-        echo "|          Starting compatibility check, please wait...         |"
+        echo "|          Stawting compatibiwity check, pwease wait...         |"
         echo "+---------------------------------------------------------------+"
         echo ""
         CPUTYPE=$(cat /proc/cpuinfo | grep "model name" | head -1 | awk -F '[:]' '{print $2}')
         echo "CPU:$CPUTYPE"
         if [[ ! "$CPUTYPE" =~ .*"AMD".* ]] && [[ ! "$CPUTYPE" =~ .*"Intel".* ]]   ; then
-             echo "[X] Brunch may not be compatible with this CPU."
-             echo "This toolkit is unable to determine what recovery your processor should use."
-             echo "This could be a bug. Please refer to the wiki page to determine compatibility for yourself."
+             echo "[X] Bwunch may nyot be compatibwe with this CPU."
+             echo "This toowkit is unyabwe to detewminye what wecuvwy youw pwocessow shouwd use."
+             echo "This couwd be a bug. Pwease wefew to the wiki page to detewminye compatibiwity fow youwsewf."
              echo ""
              printf '\e]8;;https://github.com/sebanc/brunch/wiki/CPUs-&-Recoveries\e\\> Get More Info <\e]8;;\e\\\n'
         elif [[ "$CPUTYPE" =~ .*"AMD".* ]] ; then
@@ -2144,38 +2144,38 @@ fi
         elif [[ "$CPUTYPE" =~ .*"Intel".* ]] ; then
             intelcpu
         else
-            echo "[ERROR] An unexpected error has occurred."
+            echo "[EWWOW] An unyexpected ewwow has occuwwed."
             echo "$CPUTYPE"
             echo "$AMDTYPE"
-            echo "Please report these results."
+            echo "Pwease wepowt these wesuwts."
             cat /proc/cpuinfo >> $DOWNLOADS/toolkit-log.txt
-            echo "CPU info should be found in $DOWNLOADS/toolkit.log"
+            echo "CPU info shouwd be found in $DOWNLOADS/toowkit.wog"
         fi
         echo ""
-        echo "Check complete!"
+        echo "Check compwete owo"
         cleanexit
     }
 
     amdcpu(){
         AMDTYPE=$(cat /proc/cpuinfo | grep "[a|e][0-9]-9" | head -1 | awk -F '[:]' '{print $2}')
         if [[ "$CPUTYPE" =~ .*"yzen".* ]] ; then
-            echo "[!] Brunch may be compatible with this CPU!"
-            echo "AMD support is limited, Zork is recommended."
+            echo "[ ^w^ ] Bwunch may be compatibwe with this CPU ^w^ "
+            echo "AMD suppowt is wimited, Zowk is wecommended."
             SUGGESTED="zork"
             STONEYRIDGE=true
             asktoinstall
         elif [[ "$CPUTYPE" =~ .*"$AMDTYPE".* ]] ; then
-            echo "[!] Brunch may be compatible with this CPU!"
-            echo "AMD support is limited, Grunt is recommended."
+            echo "[ >w< ] Bwunch may be compatibwe with this CPU >w< "
+            echo "AMD suppowt is wimited, Gwunt is wecommended."
             SUGGESTED="grunt"
             STONEYRIDGE=true
             asktoinstall
         elif [[ -z "$AMDTYPE" ]] ; then
-            echo "[X] Brunch may not be compatible with this CPU."
-            echo "AMD support is limited to Stoney Ridge and Ryzen processors"
-            echo "Grunt is recommended for Stoney Ridge."
-            echo "Zork is recommended for Ryzen."
-            echo "Please look up your processor and use your best judgement."
+            echo "[X] Bwunch may nyot be compatibwe with this CPU."
+            echo "AMD suppowt is wimited to Stonyey Widge and Wyzen pwocessows"
+            echo "Gwunt is wecommended fow Stonyey Widge."
+            echo "Zowk is wecommended fow Wyzen."
+            echo "Pwease wook up youw pwocessow and use youw best judgement."
             SUGGESTED="grunt"
             STONEYRIDGE=false
             asktoinstall
@@ -2191,19 +2191,19 @@ fi
         NEWCPU=$(grep -Ewo 'movbe|avx|vaes' /proc/cpuinfo  | sort | uniq | sed -e 's/movbe/Rammus is recommended./g' -e 's/avx/Eve, Nami, and Hatch are supported./g' -e 's/vaes/Please use Brunch 87 or higher!/g')
         OLDCPU=$(grep -Ewo 'sse4_2' /proc/cpuinfo  | sort | uniq | sed -e 's/sse4_2/Samus is recommended./g')
         if [ -z "$OLDCPU" ] ; then
-            echo "[X] Brunch may not be compatible with this CPU.\e[0m"
-            echo "This computer's CPU does not have the instructions required to run Brunch."
+            echo "[X] Bwunch may nyot be compatibwe with this CPU.\e[0m"
+            echo "This computew's CPU does nyot have the instwuctions wequiwed to wun Bwunch."
             SUGGESTED="unknown"
             if [ "$DONTASK" == false ] ; then
             asktoinstall
             fi
         elif [ -n "$OLDCPU" ] && [ -z "$NEWCPU" ] ; then
-            echo "Brunch is compatible with this CPU!"
+            echo "Bwunch is compatibwe with this CPU UwU "
             echo "$OLDCPU"
             SUGGESTED="samus"
             asktoinstall
         elif [ -n "$NEWCPU" ] ; then
-            echo "Brunch is compatible with this CPU!"
+            echo "Bwunch is compatibwe with this CPU (・\`ω´・)"
             echo "$NEWCPU"
             SUGGESTED="rammus"
             if [[ "$NEWCPU" =~ .*"supported".* ]] ; then
@@ -2214,20 +2214,20 @@ fi
             fi
             asktoinstall
         else
-            echo "[X] Something seems to have gone wrong, your support could not be determined."
-            echo "If you're seeing this error, please contact Wisteria on the Brunch Discord Server."
+            echo "[X] Something seems to have gonye wwong, youw suppowt couwd nyot be detewminyed."
+            echo "If you'we seeing this ewwow, pwease contact Wistewia on the Bwunch Discowd Sewvew."
             echo ""
-            printf '\e]8;;https://discord.gg/x2EgK2M\e\\> Join Brunch Discord <\e]8;;\e\\\n'
+            printf '\e]8;;https://discord.gg/x2EgK2M\e\\> Join Bwunch Discowd <\e]8;;\e\\\n'
             echo ""
             OLDCPU=
             NEWCPU=
             CPUTYPE=
-        echo "Getting toolkit ready, please wait..."
+        echo "Getting toowkit weady, pwease wait..."
             SUGGESTED="unknown"
             asktoinstall
         fi
         echo ""
-        echo "Check complete!"
+        echo "Check compwete UwU"
         OLDCPU=
         NEWCPU=
         CPUTYPE=
@@ -2235,9 +2235,9 @@ fi
     }
 
     asktoinstall(){
-        echo "Check complete!"
+        echo "Check compwete (・\`ω´・)"
         echo ""
-        echo "Would you like to install Brunch to this device? (y/n)"
+        echo "Wouwd you wike to instaww Bwunch to this device? (y/n)"
         echo ""
         installchoice
      }
@@ -2247,7 +2247,7 @@ fi
             case $yn in
                 [Yy]* ) mfinstall; return;;
                 [Nn]* ) cleanexit;;
-                    * ) echo "[ERROR] Invalid option, Please type yes or no.";;
+                    * ) echo "[EWWOW] Invawid option, Pwease type yes ow nyo.";;
             esac
 }
 
@@ -2304,7 +2304,7 @@ fi
     brunchshellsetup(){
         if [[ -z "$FINDSHELL" ]] ; then
         touch $DOWNLOADS/shell-tools.btst
-        echo "[!] Shell tools not found, please wait..."
+        echo "[ ;;w;; ] Sheww toows nyot found, pwease wait..."
         SHELLFOUND="false"
         elif [[ -n "$FINDSHELL" ]] ; then
         cp /usr/local/bin/brunch-toolkit-assets/shell-tools.btst $DOWNLOADS/shell-tools.btst 2> /dev/null
@@ -2314,47 +2314,47 @@ fi
         if [ "$SHELLFOUND" == "true" ] ; then
         CURRENTTOOLS=$(cat /usr/local/bin/brunch-toolkit-assets/shell-tools.btst | sed 's/,/\n/g')
         TOOLSVAR=$(cat /usr/local/bin/brunch-toolkit-assets/shell-tools.btst)
-        echo "Your current shell tools are:"
+        echo "Youw cuwwent sheww toows awe:"
         echo "$CURRENTTOOLS"
         echo ""
-        echo "What would you like to do?"
+        echo "What wouwd you wike to do?"
         echo ""
-        select SHELLOPT in "Uninstall shell tools" "Add another tool" "Remove a tool" Quit; do
-        if [[ $SHELLOPT =~ .*"Uninstall".* ]]; then
+        select SHELLOPT in "Unyinstaww sheww toows" "Add anyothew toow" "Wemuv a toow" Quit; do
+        if [[ $SHELLOPT =~ .*"Unyinstaww".* ]]; then
             uninstallshelltools
         elif [[ $SHELLOPT =~ .*"Add".* ]]; then
             addshelltools
-        elif [[ $SHELLOPT =~ .*"Remove".* ]]; then
+        elif [[ $SHELLOPT =~ .*"Wemuv".* ]]; then
             echo ""
-            echo "Choose which tool to remove."
+            echo "Choose which toow to wemuv."
             echo ""
             removeshelltools
         elif [ "$SHELLOPT" == "Quit" ] ; then
             cleanexit
         else
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         fi
         done
         elif [ "$SHELLFOUND" == "false" ] ; then
-            echo "The default shell tools are:"
+            echo "The defauwt sheww toows awe:"
             echo "$SHELLTOOLS"  | sed 's/,/\n/g'
         CURRENTTOOLS=$(echo "$SHELLTOOLS"  | sed 's/,/\n/g')
         TOOLSVAR="$SHELLTOOLS"
         echo ""
-        echo "What would you like to do?"
+        echo "What wouwd you wike to do?"
         echo ""
-        select SHELLOPT in "Install shell tools" "Add another tool" "Remove a tool" Quit; do
-        if [[ $SHELLOPT =~ .*"Install".* ]]; then
+        select SHELLOPT in "Instaww sheww toows" "Add anyothew toow" "Wemuv a toow" Quit; do
+        if [[ $SHELLOPT =~ .*"Instaww".* ]]; then
             installshelltools
         elif [[ $SHELLOPT =~ .*"Add".* ]]; then
             addshelltools
-        elif [[ $SHELLOPT =~ .*"Remove".* ]]; then
+        elif [[ $SHELLOPT =~ .*"Wemuv".* ]]; then
             removeshelltools
         elif [ "$SHELLOPT" == "Quit" ] ; then
             rm -f $DOWNLOADS/shell-tools.btst
             cleanexit
         else
-            echo "[ERROR] Invalid option"
+            echo "[EWWOW] Invawid option"
         fi
         done
         fi
@@ -2362,19 +2362,19 @@ fi
 
     addshelltools(){
     echo ""
-    echo "You can add your own commands here for easy access to scripts or chroots"
-    echo "These commands must be one line and can not include commas (,)"
-    echo "Type the whole command and press enter, you can remove it later."
-    echo "(You do not need to include a trailing comma, this is added automatically)"
+    echo "You can add youw own commands hewe fow easy access to scwipts ow chwoots"
+    echo "These commands must be onye winye and can nyot incwude commas (,)"
+    echo "Type the whowe command and pwess entew, you can wemuv it watew."
+    echo "(You do nyot nyeed to incwude a twaiwing comma, this is added automaticawwy)"
     echo ""
     addshelltoolssub
     }
 
     addshelltoolssub(){
-    echo "Current tools:"
+    echo "Cuwwent toows:"
     echo "$TOOLSVAR"
     echo ""
-    read -rp "Please enter a command to add: " ADOPT
+    read -rp "Pwease entew a command to add: " ADOPT
     case $ADOPT in
         * ) shelltooladdition;;
         esac
@@ -2385,18 +2385,18 @@ fi
     ADOPT=
     CURRENTTOOLS=$(echo "$TOOLSVAR"  | sed 's/,/\n/g')
     echo ""
-    echo "Current tools:"
+    echo "Cuwwent toows:"
     echo "$TOOLSVAR"
-    echo "Add another?"
+    echo "Add anyothew?"
     echo ""
-    select ANOPT in "Add more tools" "Remove a tool" "Install these tools" Quit; do
+    select ANOPT in "Add mowe toows" "Wemuv a toow" "Instaww these toows" Quit; do
         if [[ -z "$ANOPT" ]]; then
             echo "[ERROR] Invalid option"
         elif [[ $ANOPT == "Add more tools" ]]; then
             addshelltoolssub
-        elif [[ $ANOPT == "Remove a tool" ]]; then
+        elif [[ $ANOPT == "Wemuv a tool" ]]; then
             removeshelltools
-        elif [[ $ANOPT == "Install these tools" ]]; then
+        elif [[ $ANOPT == "Instaww these tools" ]]; then
             installshelltools
         elif [ "$ANOPT" == "Quit" ] ; then
             rm -f $DOWNLOADS/shell-tools.btst
@@ -2409,18 +2409,18 @@ fi
 
     removeshelltools(){
         echo ""
-        echo "Choose which tool to remove."
-        echo "You can add them back later."
+        echo "Choose which toow to wemuv."
+        echo "You can add them back watew."
         echo ""
-        echo "Current tools:"
+        echo "Cuwwent toows:"
         echo "$TOOLSVAR"
         echo ""
-        IFS=$'\n' ; select RMOPT in ${CURRENTTOOLS} "Add a tool" "Install these tools" Quit; do
+        IFS=$'\n' ; select RMOPT in ${CURRENTTOOLS} "Add a toow" "Instaww these toows" Quit; do
         if [[ -z "$RMOPT" ]]; then
             echo "[ERROR] Invalid option"
         elif [[ $RMOPT == "Add a tool" ]]; then
             addshelltools
-        elif [[ $RMOPT == "Install these tools" ]]; then
+        elif [[ $RMOPT == "Instaww these tools" ]]; then
             installshelltools
         elif [ "$RMOPT" == "Quit" ] ; then
             rm -f $DOWNLOADS/shell-tools.btst
@@ -2443,9 +2443,9 @@ fi
         sudo mkdir -p /usr/local/bin/brunch-toolkit-assets 
         sudo mv -f $DOWNLOADS/shell-tools.btst /usr/local/bin/brunch-toolkit-assets/shell-tools.btst
         if [ "$SHELLFOUND" = "true" ] ; then
-            echo "Shell tools have been updated!"
+            echo "Sheww toows have been updated ^w^ "
         else
-            echo "Shell tools have been installed!"
+            echo "Sheww toows have been instawwed ;;w;; "
         fi
         cleanexit
     }
@@ -2454,7 +2454,7 @@ fi
         echo ""
         rm -f $DOWNLOADS/shell-tools.btst
         rm -f /usr/local/bin/brunch-toolkit-assets/shell-tools.btst
-        echo "Shell tools have been uninstalled!"
+        echo "Sheww toows have been unyinstawwed owo "
         cleanexit
     }
 
@@ -2475,7 +2475,7 @@ fi
             OFFLINE=true
             compatibilitycheck
         elif [ "$OPTS" == "--offline" ] || [ "$OPTS" == "-o" ]; then
-            echo "[!] Running in offline mode."
+            echo "[ (・\`ω´・) ] Wunnying in offwinye mode."
             OFFLINE=true
             setvars
         elif [ "$OPTS" == "--brunch" ] || [ "$OPTS" == "-br" ]; then
@@ -2507,7 +2507,7 @@ fi
             setvars
             brunchshellsetup
         elif [ "$OPTS" == "--grub" ] || [ "$OPTS" == "-g" ]; then
-            echo "[!] Running in offline mode."
+            echo "[ owo ] Wunnying in offwinye mode."
             OFFLINE=true
             setvars
             editgrubconfig
@@ -2527,7 +2527,7 @@ fi
         elif [ "$OPTS" == "" ]; then
             setvars
         elif [ "$OPTS" != "" ] ; then
-            validop "$OPTS"  && "$OPTS" || echo "[ERROR] Not a valid function"
+            validop "$OPTS"  && "$OPTS" || echo "[EWWOW] Nyot a vawid function"
             cleanexit
         else
         :
@@ -2548,7 +2548,7 @@ fi
             OFFLINE=true
             compatibilitycheck
         elif [ "$OPTS" == "--offline" ] || [ "$OPTS" == "-o" ]; then
-            echo "[!] Running in offline mode."
+            echo "[ ;;w;; ] Wunnying in offwinye mode."
             OFFLINE=true
             setvars
         elif [ "$OPTS" == "--install" ] || [ "$OPTS" == "-n" ]; then
@@ -2560,7 +2560,7 @@ fi
         elif [ "$OPTS" == "" ]; then
             setvars
         elif [ "$OPTS" != "" ] ; then
-            validop "$OPTS"  && "$OPTS" || echo "[ERROR] Not a valid function"
+            validop "$OPTS"  && "$OPTS" || echo "[EWWOW] Nyot a vawid function"
             cleanexit
         else
         :
@@ -2577,9 +2577,9 @@ fi
     webtest() {
         if [ $OFFLINE = false ]; then
             case "$(curl -s --max-time 2 -I http://google.com | sed 's/^[^ ]*  *\([0-9]\).*/\1/; 1q')" in
-                [23]) echo "Toolkit Online";;
-                5) echo "[!] Check your firewall settings, running in offline mode."; OFFLINE=true;;
-                *) echo "[!] The network is down or very slow, running in offline mode."; OFFLINE=true;;
+                [23]) echo "Toowkit Onwinye";;
+                5) echo "[ UwU ] Check youw fiwewaww settings, wunnying in offwinye mode."; OFFLINE=true;;
+                *) echo "[ owo ] The nyetwowk is down ow vewy swow, wunnying in offwinye mode."; OFFLINE=true;;
             esac
         else
         :
@@ -2587,57 +2587,57 @@ fi
 }
 
 FRAMEWORKOPTIONSFULL="
-enable_updates: allow native ChromeOS updates (use at your own risk: ChromeOS will be updated but not the Brunch framework/kernel which might render your ChromeOS install unstable or even unbootable),
+enyabwe_updates: awwow nyative ChwomeOS updates (use at youw own wisk: ChwomeOS wiww be updated but nyot the Bwunch fwamewowk/kewnyew which might wendew youw ChwomeOS instaww unstabwe ow even unbootabwe),
 
-android_init_fix: alternative init to support devices on which the android container fails to start with the standard init.
+andwoid_inyit_fix: awtewnyative inyit to suppowt devices on which the andwoid containyew faiws to stawt with the standawd inyit.
 
-mount_internal_drives: allows automatic mounting of HDD partitions in ChromeOS (android media server will scan those drives which will cause high CPU usage until it has finished, it might take hours depending on your data), partition label will be used if it exists,
+mount_intewnyaw_dwives: awwows automatic mounting of HDD pawtitions in ChwomeOS (andwoid media sewvew wiww scan those dwives which wiww cause high CPU usage untiw it has finyished, it might take houws depending on youw data), pawtition wabew wiww be used if it exists,
 
-broadcom_wl: enable this option if you need the broadcom_wl module,
+bwoadcom_ww: enyabwe this option if you nyeed the bwoadcom_ww moduwe,
 
-iwlwifi_backport: enable this option if your intel wireless card is not supported natively in the kernel,
+iwwwifi_backpowt: enyabwe this option if youw intew wiwewess cawd is nyot suppowted nyativewy in the kewnyew,
 
-rtl8188eu: enable this option if you have a rtl8188eu wireless card,
+wtw8188eu: enyabwe this option if you have a wtw8188eu wiwewess cawd,
 
-rtl8723bu: enable this option if you have a rtl8723bu wireless card,
+wtw8723bu: enyabwe this option if you have a wtw8723bu wiwewess cawd,
 
-rtl8723de: enable this option if you have a rtl8723de wireless card,
+wtw8723de: enyabwe this option if you have a wtw8723de wiwewess cawd,
 
-rtl8821ce: enable this option if you have a rtl8821ce wireless card,
+wtw8821ce: enyabwe this option if you have a wtw8821ce wiwewess cawd,
 
-rtl8821cu: enable this option if you have a rtl8821cu wireless card,
+wtw8821cu: enyabwe this option if you have a wtw8821cu wiwewess cawd,
 
-rtl88x2bu: enable this option if you have a rtl88x2bu wireless card,
+wtw88x2bu: enyabwe this option if you have a wtw88x2bu wiwewess cawd,
 
-rtl8812au: enable this option if you have a rtl8812au wireless card,
+wtw8812au: enyabwe this option if you have a wtw8812au wiwewess cawd,
 
-rtbth: enable this option if you have a RT3290/RT3298LE bluetooth device,
+wtbth: enyabwe this option if you have a WT3290/WT3298WE bwuetooth device,
 
-mbp2018: add T2-based macbook bridge and spi drivers,
+mbp2018: add T2-based macbook bwidge and spi dwivews,
 
-ipts: required for Surface Pro/Book/Laptop ipts touchscreens in Brunch 87 and higher,
+ipts: wequiwed fow Suwface Pwo/Book/Waptop ipts touchscweens in Bwunch 87 and highew,
 
-acpi_power_button: try this option if long pressing the power button does not display the power menu,
+acpi_powew_button: twy this option if wong pwessing the powew button does nyot dispway the powew menyu,
 
-alt_touchpad_config: try this option if you have touchpad issues,
+awt_touchpad_config: twy this option if you have touchpad issues,
 
-alt_touchpad_config2: another option to try if you have touchpad issues,
+awt_touchpad_config2: anyothew option to twy if you have touchpad issues,
 
-disable_intel_hda: some Chromebooks need to blacklist the snd_hda_intel module, use this option to reproduce it,
+disabwe_intew_hda: some Chwomebooks nyeed to bwackwist the snd_hda_intew moduwe, use this option to wepwoduce it,
 
-internal_mic_fix: allows to forcefully enable internal mic on some devices,
+intewnyaw_mic_fix: awwows to fowcefuwwy enyabwe intewnyaw mic on some devices,
 
-asus_c302: applies asus c302 specific firmwares and fixes,
+asus_c302: appwies asus c302 specific fiwmwawes and fixes,
 
-baytrail_chromebook: applies baytrail chromebooks specific audio fixes,
+baytwaiw_chwomebook: appwies baytwaiw chwomebooks specific audio fixes,
 
-sysfs_tablet_mode: allow to control tablet mode from sysfs (echo 1 | sudo tee /sys/bus/platform/devices/tablet_mode_switch.0/tablet_mode to acivate it or use 0 to disable it),
+sysfs_tabwet_mode: awwow to contwow tabwet mode fwom sysfs (echo 1 | sudo tee /sys/bus/pwatfowm/devices/tabwet_mode_switch.0/tabwet_mode to acivate it ow use 0 to disabwe it),
 
-force_tablet_mode: same as above except tablet mode is enabled by default on boot,
+fowce_tabwet_mode: same as abuv except tabwet mode is enyabwed by defauwt on boot,
 
-suspend_s3: disable suspend to idle (S0ix) and use S3 suspend instead,
+suspend_s3: disabwe suspend to idwe (S0ix) and use S3 suspend instead,
 
-advanced_als: default ChromeOS auto-brightness is very basic (https://chromium.googlesource.com/chromiumos/platform2/+/master/power_manager/docs/screen_brightness.md). This option activates more auto-brightness levels (based on the Google Pixel Slate implementation).
+advanced_aws: defauwt ChwomeOS auto-bwightnyess is vewy basic (https://chwomium.googwesouwce.com/chwomiumos/pwatfowm2/+/mastew/powew_manyagew/docs/scween_bwightnyess.md). This option activates mowe auto-bwightnyess wevews (based on the Googwe Pixew Swate impwementation).
 "
 
 #####################################################################
@@ -2649,7 +2649,7 @@ pwa-autotoolkit(){
     pwa-sharedvars
 # If updating is not possible, exit with error.
     if [ "$toolkitoutdated" == false ] ; then
-        pwaerror="[ERROR] An update is not possible"
+        pwaerror="[EWWOW] An update is nyot possibwe"
         exit
     fi
 # Make a working directory to keep toolkit out of sight
@@ -2683,7 +2683,7 @@ pwa-autoupdate(){
     fi
 # If updating is not possible, exit with error.
     if [ "$possible" == false ] ; then
-        pwaerror="[ERROR] An update is not possible"
+        pwaerror="[EWWOW] An update is nyot possibwe"
         exit
     fi
 # Make a working directory to keep toolkit out of sight
@@ -2706,7 +2706,7 @@ pwa-autoupdate(){
 pwa-sharedvars(){
     # Check for existing update process
         if [ "$updateinprogress" == "true" ] ; then
-            pwaerror="[Error] Update already in progress!"
+            pwaerror="[Ewwow] Update awweady in pwogwess owo"
             updateinprogress="false"
             exit
         fi
@@ -2716,13 +2716,13 @@ pwa-sharedvars(){
     # If connection is good, do nothing and proceed quietly
             [23]) onlineallowed="true" ;;
     # Error on weak or empty connection
-            *) onlineallowed="false" ; pwaerror="[ERROR] The network is down or very slow, unable to continue."; exit ;;
+            *) onlineallowed="false" ; pwaerror="[EWWOW] The nyetwowk is down ow vewy swow, unyabwe to continyue."; exit ;;
         esac
     # Get current Brunch version from file
         currentbrunchversion=$(cat /etc/brunch_version | sed -e 's/stable //g' -e 's/unstable //g' -e 's/testing //g' | cut -d' ' -f3)
     # Error if called on a non-brunch device
         if [ -z "$currentbrunchversion" ] ; then
-            pwaerror="[ERROR] This function only works on Brunch systems!"
+            pwaerror="[EWWOW] This function onwy wowks on Bwunch systems >w<"
             exit
         fi
     # Get latest brunch version from both channels
@@ -2732,7 +2732,7 @@ pwa-sharedvars(){
     latesttoolkit=$(curl -s "https://api.github.com/repos/WesBosch/brunch-toolkit/releases/latest" | grep 'name' | cut -d\" -f4 | grep '.sh' | cut -d'-' -f3 | sed -e s/.sh// )
     # Check if Github api is acting up, use brunch stable as a test
     if [ -z "$latestbrunchstableversion" ] ; then
-        pwaerror="[ERROR] Github API has hit the request limit, try again later."
+        pwaerror="[EWWOW] Github API has hit the wequest wimit, twy again watew."
         exit
     fi
     # Check if Brunch is outdated, compare both channels
@@ -2772,7 +2772,7 @@ pwa-sharedvars(){
         latesttoolkiturl=$(curl -s https://api.github.com/repos/WesBosch/brunch-toolkit/releases/latest | grep 'browser_' | cut -d\" -f4 | grep '.sh')
     # Report no errors if there are no errors
         if [ -z "$pwaerror" ] ; then
-            pwaerror="No error."
+            pwaerror="Nyo ewwow."
         fi
     # Echo all important variables if calling verbose function
         if [ "$OPTS" == "--pwa-verbose" ] || [ "$OPTS" == "-pwa-v" ]; then
