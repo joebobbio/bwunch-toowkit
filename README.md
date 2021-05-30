@@ -4,7 +4,7 @@ Stabwe wewease channyew fow the Bwunch Toowkit
 This is my fiwst scwipt, expect bugs ;;w;; 
 Speciaw thanks to aww of the hewpfuw fowks of the Bwunch Discowd gwoup.
 You can find me thewe as weww:
-https://discowd.gg/x2EgK2M
+https://discord.gg/x2EgK2M
 
 -- Wistewia
 
@@ -14,12 +14,12 @@ This softwawe is pwovided as-is with nyo wawwanty. I am nyot an expewt and I am 
 Pwease do nyot use ow showcase my scwipt in videos, and do nyot use this scwipt in any othew pwojects. If you'd wike pewmission to do so pwease contact me.
 
 ## What is Bwunch?
-Bwunch is a fwamewowk that aims to cweate a genyewic x86_64 Chwome OS image that can be instawwed on nyon-standawd hawdwawe. I'd suggest weading up on the pwoject at it's officiaw souwce: https://github.com/sebanc/bwunch
+Bwunch is a fwamewowk that aims to cweate a genyewic x86_64 Chwome OS image that can be instawwed on nyon-standawd hawdwawe. I'd suggest weading up on the pwoject at it's officiaw souwce: https://github.com/sebanc/brunch
 
 ## How to Use
 - Open a tewminyaw with ctww + awt + t (Fow bwunch usews, type "sheww" at the pwompt)
-- Type: `cuww -w https://waw.githubusewcontent.com/WesBosch/bwunch-toowkit/main/bwunch-toowkit -o ~/Downwoads/bwunch-toowkit` 
-- Type: `sudo instaww -Dt /usw/wocaw/bin -m 755 ~/Downwoads/bwunch-toowkit` 
+- Type: `curl -l https://raw.githubusercontent.com/joebobbio/bwunch-toowkit/main/bwunch-toowkit -o ~/Downloads/bwunch-toowkit` 
+- Type: `sudo install -Dt /usr/local/bin -m 755 ~/Downloads/bwunch-toowkit` 
 - The toowkit can nyow be wunched with `bwunch-toowkit` and updated using the steps abuv ow thwough it's own menyu.
 - Fowwow the on scween pwompts. If something wequiwes that you downwoad a fiwe, the scwipt wiww pwobabwy offew to do it fow you.
 
