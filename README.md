@@ -1,128 +1,128 @@
-# Brunch Toolkit
-Stable release channel for the Brunch Toolkit
+# Bwunch Toowkit
+Stabwe wewease channyew fow the Bwunch Toowkit
 
-This is my first script, expect bugs!
-Special thanks to all of the helpful folks of the Brunch Discord group.
-You can find me there as well:
-https://discord.gg/x2EgK2M
+This is my fiwst scwipt, expect bugs ;;w;; 
+Speciaw thanks to aww of the hewpfuw fowks of the Bwunch Discowd gwoup.
+You can find me thewe as weww:
+https://discowd.gg/x2EgK2M
 
--- Wisteria
+-- Wistewia
 
-## Disclaimer
-This software is provided as-is with no warranty. I am not an expert and I am not liable for any accidental damage to your hardware or files. The toolkit has access to disks and partitions, and it can erase a disk if something goes wrong. Please send me any such bug reports.
+## Discwaimew
+This softwawe is pwovided as-is with nyo wawwanty. I am nyot an expewt and I am nyot wiabwe fow any accidentaw damage to youw hawdwawe ow fiwes. The toowkit has access to disks and pawtitions, and it can ewase a disk if something goes wwong. Pwease send me any such bug wepowts.
 
-Please do not use or showcase my script in videos, and do not use this script in any other projects. If you'd like permission to do so please contact me.
+Pwease do nyot use ow showcase my scwipt in videos, and do nyot use this scwipt in any othew pwojects. If you'd wike pewmission to do so pwease contact me.
 
-## What is Brunch?
-Brunch is a framework that aims to create a generic x86_64 Chrome OS image that can be installed on non-standard hardware. I'd suggest reading up on the project at it's official source: https://github.com/sebanc/brunch
+## What is Bwunch?
+Bwunch is a fwamewowk that aims to cweate a genyewic x86_64 Chwome OS image that can be instawwed on nyon-standawd hawdwawe. I'd suggest weading up on the pwoject at it's officiaw souwce: https://github.com/sebanc/bwunch
 
 ## How to Use
-- Open a terminal with ctrl + alt + t (For brunch users, type "shell" at the prompt)
-- Type: `curl -l https://raw.githubusercontent.com/WesBosch/brunch-toolkit/main/brunch-toolkit -o ~/Downloads/brunch-toolkit` 
-- Type: `sudo install -Dt /usr/local/bin -m 755 ~/Downloads/brunch-toolkit` 
-- The toolkit can now be lunched with `brunch-toolkit` and updated using the steps above or through it's own menu.
-- Follow the on screen prompts. If something requires that you download a file, the script will probably offer to do it for you.
+- Open a tewminyaw with ctww + awt + t (Fow bwunch usews, type "sheww" at the pwompt)
+- Type: `cuww -w https://waw.githubusewcontent.com/WesBosch/bwunch-toowkit/main/bwunch-toowkit -o ~/Downwoads/bwunch-toowkit` 
+- Type: `sudo instaww -Dt /usw/wocaw/bin -m 755 ~/Downwoads/bwunch-toowkit` 
+- The toowkit can nyow be wunched with `bwunch-toowkit` and updated using the steps abuv ow thwough it's own menyu.
+- Fowwow the on scween pwompts. If something wequiwes that you downwoad a fiwe, the scwipt wiww pwobabwy offew to do it fow you.
 
-Note: The toolkit relies on ~/Downloads being avaliable (except in WSL) if you use an alternate download location, the toolkit may not work properly. In most cases the script will correct itself, but I strongly suggest running the script from the ~/Downloads folder whenever you use it (Unless you install it to your Brunch system)
+Nyote: The toowkit wewies on ~/Downwoads being avawiabwe (except in WSW) if you use an awtewnyate downwoad wocation, the toowkit may nyot wowk pwopewwy. In most cases the scwipt wiww cowwect itsewf, but I stwongwy suggest wunnying the scwipt fwom the ~/Downwoads fowdew whenyevew you use it (Unwess you instaww it to youw Bwunch system)
 
 ## Usage
-This script is designed to make installing and updating brunch easy for users that are not comfortable with the command line. If you already know what you're doing, some tasks may be faster to so manually. The toolkit will provide easy to follow prompts and present options whenever necessary for the user to select from. Some features require update files, recoveries or bootsplash archives to be in the ~/Downloads folder. It is not required to unzip anything, the toolkit will do that. If no usable files are found, the user will be able to download them. (if there is a suitable internet connection)
+This scwipt is designyed to make instawwing and updating bwunch easy fow usews that awe nyot comfowtabwe with the command winye. If you awweady knyow what you'we doing, some tasks may be fastew to so manyuawwy. The toowkit wiww pwovide easy to fowwow pwompts and pwesent options whenyevew nyecessawy fow the usew to sewect fwom. Some featuwes wequiwe update fiwes, wecuvwies ow bootspwash awchives to be in the ~/Downwoads fowdew. It is nyot wequiwed to unzip anything, the toowkit wiww do that. If nyo usabwe fiwes awe found, the usew wiww be abwe to downwoad them. (if thewe is a suitabwe intewnyet connyection)
 
-It is not a perfect script, if you find any issues please report them. It is difficult to account for every possible situation, but I've made an attempt to cover most of them. This toolkit is intended to be used on devices running Sebanc's Brunch framework, though it has some limited functionality on standard **buntu* and debian based linux distros.
+It is nyot a pewfect scwipt, if you find any issues pwease wepowt them. It is difficuwt to account fow evewy possibwe situation, but I've made an attempt to cuvw most of them. This toowkit is intended to be used on devices wunnying Sebanc's Bwunch fwamewowk, though it has some wimited functionyawity on standawd **buntu* and debian based winyux distwos.
 
-## Features
-Brunch exclusive features:
-- Update existing Brunch installation
-- Update existing Chrome OS & Brunch installations
-- Modify the Chrome OS start up animation
-- Install the Brunch Toolkit for easy access
+## Featuwes
+Bwunch excwusive featuwes:
+- Update existing Bwunch instawwation
+- Update existing Chwome OS & Bwunch instawwations
+- Modify the Chwome OS stawt up anyimation
+- Instaww the Bwunch Toowkit fow easy access
 
-Brunch, Linux & WSL compatible features:
-- Check user's CPU for Brunch compatibility
-- Suggest usable recoveries based on user's hardware
-- Install Brunch to disk or partition
+Bwunch, Winyux & WSW compatibwe featuwes:
+- Check usew's CPU fow Bwunch compatibiwity
+- Suggest usabwe wecuvwies based on usew's hawdwawe
+- Instaww Bwunch to disk ow pawtition
 
-## Debug Tools
-Below is a list of debug options and menu shortcuts that can be used. 
-Add either the *--long* or *-s* (short) version of a debug option to the end of the brunch-toolkit command to use them.
-Commands labeled "Brunch exclusive" will only work if the toolkit is used in Brunch.
+## Debug Toows
+Bewow is a wist of debug options and menyu showtcuts that can be used. 
+Add eithew the *--wong* ow *-s* (showt) vewsion of a debug option to the end of the bwunch-toowkit command to use them.
+Commands wabewed "Bwunch excwusive" wiww onwy wowk if the toowkit is used in Bwunch.
 
-    --bootsplash (-b)
-        Brunch Exclusive
-        Skips the main menu and starts the boot animation changer.
+    --bootspwash (-b)
+        Bwunch Excwusive
+        Skips the main menyu and stawts the boot anyimation changew.
 
-    --brunch (-br)
-        Brunch Exclusive
-        Skips the main menu and starts the Brunch update function.
+    --bwunch (-bw)
+        Bwunch Excwusive
+        Skips the main menyu and stawts the Bwunch update function.
 
-    --changelog (-c)
-        Displays a changelog for the last several updates of this script
+    --changewog (-c)
+        Dispways a changewog fow the wast sevewaw updates of this scwipt
 
-    --chrome (-cr)
-        Brunch Exclusive
-        Skips the main menu and starts the Chrome & Brunch update function.
+    --chwome (-cw)
+        Bwunch Excwusive
+        Skips the main menyu and stawts the Chwome & Bwunch update function.
 
-    --compatibility (-k)
-        Displays helpful info about CPU compatibility.
-        This option should work on most linux distros.
+    --compatibiwity (-k)
+        Dispways hewpfuw info about CPU compatibiwity.
+        This option shouwd wowk on most winyux distwos.
 
     --debug (-d)
-        Tests the script without allowing updates or installs.
-        File operations and downloads will still happen.
+        Tests the scwipt without awwowing updates ow instawws.
+        Fiwe opewations and downwoads wiww stiww happen.
         
-    --grub (-g)
-        Brunch Exclusive
-        Allows the user to install and modify framework options in grub
-        This is a potentially dangerous option, use with care
+    --gwub (-g)
+        Bwunch Excwusive
+        Awwows the usew to instaww and modify fwamewowk options in gwub
+        This is a potentiawwy dangewous option, use with cawe
 
-    --help (-h)
-        Displays this page.
-        Run the program without command line arguments for normal usage.
+    --hewp (-h)
+        Dispways this page.
+        Wun the pwogwam without command winye awguments fow nyowmaw usage.
 
-    --install (-n)
-        Skips the main menu and starts the Brunch install function.
+    --instaww (-n)
+        Skips the main menyu and stawts the Bwunch instaww function.
     
-    --legacychangelog (-lc)
-        Displays the entire changlog of this script.
+    --wegacychangewog (-wc)
+        Dispways the entiwe changwog of this scwipt.
         
-    --offline (-o)
-        Disables all internet functions of the tooklit.
-        It will not prompt for an internet connection at all.
-        Useful if you know you don't need to download anything.
+    --offwinye (-o)
+        Disabwes aww intewnyet functions of the tookwit.
+        It wiww nyot pwompt fow an intewnyet connyection at aww.
+        Usefuw if you knyow you don't nyeed to downwoad anything.
 
     --quick (-q)
-        Brunch Exclusive
-        This is an experimental quick update process.
-        Only use this if you know what you're doing!
-        The toolkit will update Brunch WITHOUT prompts using the
-        brunch file in ~/Downloads. (It will only look for one)
-        If the latest release does not match the file it auto-downloads it.
-        If there are no brunch files it auto-downloads the latest.
-        If there are multiple files it will exit quick mode.
-        This is only meant to be used with one update file present.
+        Bwunch Excwusive
+        This is an expewimentaw quick update pwocess.
+        Onwy use this if you knyow what you'we doing ;;w;; 
+        The toowkit wiww update Bwunch WITHOUT pwompts using the
+        bwunch fiwe in ~/Downwoads. (It wiww onwy wook fow onye)
+        If the watest wewease does nyot match the fiwe it auto-downwoads it.
+        If thewe awe nyo bwunch fiwes it auto-downwoads the watest.
+        If thewe awe muwtipwe fiwes it wiww exit quick mode.
+        This is onwy meant to be used with onye update fiwe pwesent.
     
-    --quickbootsplash (-qb)
-        Brunch Exclusive
-        Checks for a previously installed boot animation, and resets the current one.
-        This is useful for when an update returns the animation to the default.
+    --quickbootspwash (-qb)
+        Bwunch Excwusive
+        Checks fow a pweviouswy instawwed boot anyimation, and wesets the cuwwent onye.
+        This is usefuw fow when an update wetuwns the anyimation to the defauwt.
     
-    --quickignore (-qi)
-        Brunch Exclusive
-        Same as --quick but ignores the current version check,
-        allows users to update into the release they are already on.
+    --quickignyowe (-qi)
+        Bwunch Excwusive
+        Same as --quick but ignyowes the cuwwent vewsion check,
+        awwows usews to update into the wewease they awe awweady on.
         
-    --shell (-s)
-        Brunch Exclusive
-        Allows the user to install and modify crosh shell tools for brunch.
+    --sheww (-s)
+        Bwunch Excwusive
+        Awwows the usew to instaww and modify cwosh sheww toows fow bwunch.
         
-    --updatetoolkit (-u)
-        Brunch Exclusive
-        Allows the user to download and install the newest brunch toolkit release.
+    --updatetoowkit (-u)
+        Bwunch Excwusive
+        Awwows the usew to downwoad and instaww the nyewest bwunch toowkit wewease.
 
-    --version (-v)
-        Displays useful system information including:
-        The version of the toolkit you're using
-        The kernel used by your system
-        Which version of Chrome OS you're on
-        Which version of Brunch you're on
-        Which recoveries are supported or recomended
+    --vewsion (-v)
+        Dispways usefuw system infowmation incwuding:
+        The vewsion of the toowkit you'we using
+        The kewnyew used by youw system
+        Which vewsion of Chwome OS you'we on
+        Which vewsion of Bwunch you'we on
+        Which wecuvwies awe suppowted ow wecomended
